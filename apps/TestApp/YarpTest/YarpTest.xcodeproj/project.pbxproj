@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF0884E71A8DF34F0060F235 /* YarpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0884E61A8DF34F0060F235 /* YarpView.xib */; };
+		FF0884EA1A8DF36C0060F235 /* IITYarpViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0884E91A8DF36C0060F235 /* IITYarpViewViewController.m */; };
+		FF0884EC1A8E29130060F235 /* icub.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FF0884EB1A8E29130060F235 /* icub.jpeg */; };
+		FF4353971B5BEEDA00981100 /* yarp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4353921B5BEEC800981100 /* yarp_iOS.framework */; };
+		FFDEC7271A860EA300B60C65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDEC7261A860EA300B60C65 /* main.m */; };
+		FFDEC72A1A860EA300B60C65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDEC7291A860EA300B60C65 /* AppDelegate.m */; };
+		FFDEC7301A860EA300B60C65 /* IITPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDEC72F1A860EA300B60C65 /* IITPreferencesViewController.m */; };
+		FFDEC7331A860EA300B60C65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDEC7311A860EA300B60C65 /* Main.storyboard */; };
+		FFDEC7351A860EA300B60C65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDEC7341A860EA300B60C65 /* Images.xcassets */; };
+		FFDEC7381A860EA300B60C65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFDEC7361A860EA300B60C65 /* LaunchScreen.xib */; };
+		FFDEC7441A860EA300B60C65 /* YarpTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDEC7431A860EA300B60C65 /* YarpTestTests.m */; };
+		FFDEC75D1A8638F100B60C65 /* IITApplicationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDEC75C1A8638F100B60C65 /* IITApplicationsTableViewController.m */; };
+		FFDEC7611A863B4800B60C65 /* YarpReadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFDEC7601A863B4800B60C65 /* YarpReadView.xib */; };
+		FFDEC7641A863B5D00B60C65 /* IITYarpReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDEC7631A863B5D00B60C65 /* IITYarpReadViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF4353911B5BEEC800981100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF43538C1B5BEEC800981100 /* yarp_iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FF4353371B5BECB700981100;
+			remoteInfo = yarp_iOS;
+		};
+		FF4353931B5BEEC800981100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF43538C1B5BEEC800981100 /* yarp_iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FF4353421B5BECB700981100;
+			remoteInfo = yarp_iOSTests;
+		};
+		FF4353951B5BEED500981100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF43538C1B5BEEC800981100 /* yarp_iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FF4353361B5BECB700981100;
+			remoteInfo = yarp_iOS;
+		};
+		FFDEC73E1A860EA300B60C65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFDEC7191A860EA300B60C65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFDEC7201A860EA300B60C65;
+			remoteInfo = YarpTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF0884E61A8DF34F0060F235 /* YarpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YarpView.xib; sourceTree = "<group>"; };
+		FF0884E81A8DF36C0060F235 /* IITYarpViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITYarpViewViewController.h; sourceTree = "<group>"; };
+		FF0884E91A8DF36C0060F235 /* IITYarpViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITYarpViewViewController.m; sourceTree = "<group>"; };
+		FF0884EB1A8E29130060F235 /* icub.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icub.jpeg; sourceTree = "<group>"; };
+		FF43538C1B5BEEC800981100 /* yarp_iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yarp_iOS.xcodeproj; path = ../../../libs/yarp_iOS/yarp_iOS.xcodeproj; sourceTree = "<group>"; };
+		FFDEC7211A860EA300B60C65 /* YarpTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YarpTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDEC7251A860EA300B60C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDEC7261A860EA300B60C65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FFDEC7281A860EA300B60C65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FFDEC7291A860EA300B60C65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FFDEC72E1A860EA300B60C65 /* IITPreferencesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IITPreferencesViewController.h; sourceTree = "<group>"; };
+		FFDEC72F1A860EA300B60C65 /* IITPreferencesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IITPreferencesViewController.m; sourceTree = "<group>"; };
+		FFDEC7321A860EA300B60C65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFDEC7341A860EA300B60C65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FFDEC7371A860EA300B60C65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FFDEC73D1A860EA300B60C65 /* YarpTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YarpTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDEC7421A860EA300B60C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDEC7431A860EA300B60C65 /* YarpTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YarpTestTests.m; sourceTree = "<group>"; };
+		FFDEC75B1A8638F100B60C65 /* IITApplicationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITApplicationsTableViewController.h; sourceTree = "<group>"; };
+		FFDEC75C1A8638F100B60C65 /* IITApplicationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITApplicationsTableViewController.m; sourceTree = "<group>"; };
+		FFDEC7601A863B4800B60C65 /* YarpReadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YarpReadView.xib; sourceTree = "<group>"; };
+		FFDEC7621A863B5D00B60C65 /* IITYarpReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITYarpReadViewController.h; sourceTree = "<group>"; };
+		FFDEC7631A863B5D00B60C65 /* IITYarpReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITYarpReadViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFDEC71E1A860EA300B60C65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF4353971B5BEEDA00981100 /* yarp_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDEC73A1A860EA300B60C65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF0884E41A8DF3310060F235 /* YarpView */ = {
+			isa = PBXGroup;
+			children = (
+				FF0884E61A8DF34F0060F235 /* YarpView.xib */,
+				FF0884E81A8DF36C0060F235 /* IITYarpViewViewController.h */,
+				FF0884E91A8DF36C0060F235 /* IITYarpViewViewController.m */,
+			);
+			path = YarpView;
+			sourceTree = "<group>";
+		};
+		FF43538D1B5BEEC800981100 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF4353921B5BEEC800981100 /* yarp_iOS.framework */,
+				FF4353941B5BEEC800981100 /* yarp_iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFDEC7181A860EA300B60C65 = {
+			isa = PBXGroup;
+			children = (
+				FF43538C1B5BEEC800981100 /* yarp_iOS.xcodeproj */,
+				FFDEC7231A860EA300B60C65 /* YarpTest */,
+				FFDEC7401A860EA300B60C65 /* YarpTestTests */,
+				FFDEC7221A860EA300B60C65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFDEC7221A860EA300B60C65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFDEC7211A860EA300B60C65 /* YarpTest.app */,
+				FFDEC73D1A860EA300B60C65 /* YarpTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFDEC7231A860EA300B60C65 /* YarpTest */ = {
+			isa = PBXGroup;
+			children = (
+				FF0884E41A8DF3310060F235 /* YarpView */,
+				FFDEC75F1A86394400B60C65 /* YarpRead */,
+				FFDEC7281A860EA300B60C65 /* AppDelegate.h */,
+				FFDEC7291A860EA300B60C65 /* AppDelegate.m */,
+				FFDEC72E1A860EA300B60C65 /* IITPreferencesViewController.h */,
+				FFDEC72F1A860EA300B60C65 /* IITPreferencesViewController.m */,
+				FFDEC75B1A8638F100B60C65 /* IITApplicationsTableViewController.h */,
+				FFDEC75C1A8638F100B60C65 /* IITApplicationsTableViewController.m */,
+				FFDEC7311A860EA300B60C65 /* Main.storyboard */,
+				FFDEC7341A860EA300B60C65 /* Images.xcassets */,
+				FFDEC7361A860EA300B60C65 /* LaunchScreen.xib */,
+				FFDEC7241A860EA300B60C65 /* Supporting Files */,
+			);
+			path = YarpTest;
+			sourceTree = "<group>";
+		};
+		FFDEC7241A860EA300B60C65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF0884EB1A8E29130060F235 /* icub.jpeg */,
+				FFDEC7251A860EA300B60C65 /* Info.plist */,
+				FFDEC7261A860EA300B60C65 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFDEC7401A860EA300B60C65 /* YarpTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFDEC7431A860EA300B60C65 /* YarpTestTests.m */,
+				FFDEC7411A860EA300B60C65 /* Supporting Files */,
+			);
+			path = YarpTestTests;
+			sourceTree = "<group>";
+		};
+		FFDEC7411A860EA300B60C65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFDEC7421A860EA300B60C65 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFDEC75F1A86394400B60C65 /* YarpRead */ = {
+			isa = PBXGroup;
+			children = (
+				FFDEC7601A863B4800B60C65 /* YarpReadView.xib */,
+				FFDEC7621A863B5D00B60C65 /* IITYarpReadViewController.h */,
+				FFDEC7631A863B5D00B60C65 /* IITYarpReadViewController.m */,
+			);
+			path = YarpRead;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFDEC7201A860EA300B60C65 /* YarpTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDEC7471A860EA300B60C65 /* Build configuration list for PBXNativeTarget "YarpTest" */;
+			buildPhases = (
+				FFDEC71D1A860EA300B60C65 /* Sources */,
+				FFDEC71E1A860EA300B60C65 /* Frameworks */,
+				FFDEC71F1A860EA300B60C65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF4353961B5BEED500981100 /* PBXTargetDependency */,
+			);
+			name = YarpTest;
+			productName = YarpTest;
+			productReference = FFDEC7211A860EA300B60C65 /* YarpTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFDEC73C1A860EA300B60C65 /* YarpTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDEC74A1A860EA300B60C65 /* Build configuration list for PBXNativeTarget "YarpTestTests" */;
+			buildPhases = (
+				FFDEC7391A860EA300B60C65 /* Sources */,
+				FFDEC73A1A860EA300B60C65 /* Frameworks */,
+				FFDEC73B1A860EA300B60C65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFDEC73F1A860EA300B60C65 /* PBXTargetDependency */,
+			);
+			name = YarpTestTests;
+			productName = YarpTestTests;
+			productReference = FFDEC73D1A860EA300B60C65 /* YarpTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFDEC7191A860EA300B60C65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IIT;
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Istituto Italiano di Tecnologia";
+				TargetAttributes = {
+					FFDEC7201A860EA300B60C65 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					FFDEC73C1A860EA300B60C65 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = FFDEC7201A860EA300B60C65;
+					};
+				};
+			};
+			buildConfigurationList = FFDEC71C1A860EA300B60C65 /* Build configuration list for PBXProject "YarpTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFDEC7181A860EA300B60C65;
+			productRefGroup = FFDEC7221A860EA300B60C65 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FF43538D1B5BEEC800981100 /* Products */;
+					ProjectRef = FF43538C1B5BEEC800981100 /* yarp_iOS.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				FFDEC7201A860EA300B60C65 /* YarpTest */,
+				FFDEC73C1A860EA300B60C65 /* YarpTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FF4353921B5BEEC800981100 /* yarp_iOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = yarp_iOS.framework;
+			remoteRef = FF4353911B5BEEC800981100 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FF4353941B5BEEC800981100 /* yarp_iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = yarp_iOSTests.xctest;
+			remoteRef = FF4353931B5BEEC800981100 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFDEC71F1A860EA300B60C65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0884E71A8DF34F0060F235 /* YarpView.xib in Resources */,
+				FFDEC7611A863B4800B60C65 /* YarpReadView.xib in Resources */,
+				FF0884EC1A8E29130060F235 /* icub.jpeg in Resources */,
+				FFDEC7331A860EA300B60C65 /* Main.storyboard in Resources */,
+				FFDEC7381A860EA300B60C65 /* LaunchScreen.xib in Resources */,
+				FFDEC7351A860EA300B60C65 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDEC73B1A860EA300B60C65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFDEC71D1A860EA300B60C65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0884EA1A8DF36C0060F235 /* IITYarpViewViewController.m in Sources */,
+				FFDEC7301A860EA300B60C65 /* IITPreferencesViewController.m in Sources */,
+				FFDEC7641A863B5D00B60C65 /* IITYarpReadViewController.m in Sources */,
+				FFDEC72A1A860EA300B60C65 /* AppDelegate.m in Sources */,
+				FFDEC7271A860EA300B60C65 /* main.m in Sources */,
+				FFDEC75D1A8638F100B60C65 /* IITApplicationsTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDEC7391A860EA300B60C65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDEC7441A860EA300B60C65 /* YarpTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF4353961B5BEED500981100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = yarp_iOS;
+			targetProxy = FF4353951B5BEED500981100 /* PBXContainerItemProxy */;
+		};
+		FFDEC73F1A860EA300B60C65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFDEC7201A860EA300B60C65 /* YarpTest */;
+			targetProxy = FFDEC73E1A860EA300B60C65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFDEC7311A860EA300B60C65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFDEC7321A860EA300B60C65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFDEC7361A860EA300B60C65 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFDEC7371A860EA300B60C65 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFDEC7451A860EA300B60C65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFDEC7461A860EA300B60C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFDEC7481A860EA300B60C65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YarpTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FFDEC7491A860EA300B60C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YarpTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FFDEC74B1A860EA300B60C65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YarpTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YarpTest.app/YarpTest";
+			};
+			name = Debug;
+		};
+		FFDEC74C1A860EA300B60C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YarpTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YarpTest.app/YarpTest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFDEC71C1A860EA300B60C65 /* Build configuration list for PBXProject "YarpTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDEC7451A860EA300B60C65 /* Debug */,
+				FFDEC7461A860EA300B60C65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDEC7471A860EA300B60C65 /* Build configuration list for PBXNativeTarget "YarpTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDEC7481A860EA300B60C65 /* Debug */,
+				FFDEC7491A860EA300B60C65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDEC74A1A860EA300B60C65 /* Build configuration list for PBXNativeTarget "YarpTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDEC74B1A860EA300B60C65 /* Debug */,
+				FFDEC74C1A860EA300B60C65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFDEC7191A860EA300B60C65 /* Project object */;
+}
