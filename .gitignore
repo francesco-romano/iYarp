@@ -224,4 +224,4 @@ xcuserdata/
 #
 *.xccheckout
 
-extern/*
+extern/install/
