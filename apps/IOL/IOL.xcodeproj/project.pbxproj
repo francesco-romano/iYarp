@@ -15,6 +15,9 @@
 		FF2CA5021B5C0389005EE193 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA5011B5C0389005EE193 /* Images.xcassets */; };
 		FF2CA5051B5C0389005EE193 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA5031B5C0389005EE193 /* LaunchScreen.xib */; };
 		FF2CA5111B5C0389005EE193 /* IOLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA5101B5C0389005EE193 /* IOLTests.m */; };
+		FFDBD7B81B5CDF530085441C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7B71B5CDF530085441C /* AVFoundation.framework */; };
+		FFDBD7BA1B5CDF5D0085441C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */; };
+		FFDBD7BD1B5CE0C00085441C /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7BC1B5CE0C00085441C /* OpenEars.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		FF2CA50A1B5C0389005EE193 /* IOLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2CA50F1B5C0389005EE193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF2CA5101B5C0389005EE193 /* IOLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOLTests.m; sourceTree = "<group>"; };
+		FFDBD7B71B5CDF530085441C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FFDBD7BC1B5CE0C00085441C /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = Frameworks/OpenEars.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDBD7BA1B5CDF5D0085441C /* AudioToolbox.framework in Frameworks */,
+				FFDBD7B81B5CDF530085441C /* AVFoundation.framework in Frameworks */,
+				FFDBD7BD1B5CE0C00085441C /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +77,7 @@
 			children = (
 				FF2CA4F01B5C0389005EE193 /* IOL */,
 				FF2CA50D1B5C0389005EE193 /* IOLTests */,
+				FFDBD7BB1B5CDF610085441C /* Frameworks */,
 				FF2CA4EF1B5C0389005EE193 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +132,16 @@
 				FF2CA50F1B5C0389005EE193 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFDBD7BB1B5CDF610085441C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFDBD7BC1B5CE0C00085441C /* OpenEars.framework */,
+				FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */,
+				FFDBD7B71B5CDF530085441C /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = IOL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,6 +389,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = IOL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,6 +452,7 @@
 				FF2CA5161B5C0389005EE193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF2CA5171B5C0389005EE193 /* Build configuration list for PBXNativeTarget "IOLTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +461,7 @@
 				FF2CA5191B5C0389005EE193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
