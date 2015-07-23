@@ -80,6 +80,27 @@
 			remoteGlobalIDString = 13A9BE8F52BD45B08D2069C8;
 			remoteInfo = YARP_logger;
 		};
+		FFCCDB651B6137880005207A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF43539E1B5BF16400981100 /* YARP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3157BAF576FF4AB0AF80E9DC;
+			remoteInfo = YARP_OS;
+		};
+		FFCCDB671B6137880005207A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF43539E1B5BF16400981100 /* YARP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B4692F7069D499B92B8871A;
+			remoteInfo = YARP_sig;
+		};
+		FFCCDB691B6137880005207A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF43539E1B5BF16400981100 /* YARP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6063FD1A03874666843E08C1;
+			remoteInfo = YARP_init;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -278,6 +299,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				FFCCDB661B6137880005207A /* PBXTargetDependency */,
+				FFCCDB681B6137880005207A /* PBXTargetDependency */,
+				FFCCDB6A1B6137880005207A /* PBXTargetDependency */,
 			);
 			name = yarp_iOS;
 			productName = yarp_iOS;
@@ -434,6 +458,21 @@
 			isa = PBXTargetDependency;
 			target = FF4353361B5BECB700981100 /* yarp_iOS */;
 			targetProxy = FF4353441B5BECB700981100 /* PBXContainerItemProxy */;
+		};
+		FFCCDB661B6137880005207A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YARP_OS;
+			targetProxy = FFCCDB651B6137880005207A /* PBXContainerItemProxy */;
+		};
+		FFCCDB681B6137880005207A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YARP_sig;
+			targetProxy = FFCCDB671B6137880005207A /* PBXContainerItemProxy */;
+		};
+		FFCCDB6A1B6137880005207A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YARP_init;
+			targetProxy = FFCCDB691B6137880005207A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

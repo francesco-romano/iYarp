@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <yarp_iOS/IITYarpNetworkConfiguration.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +17,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    IITYarpNetworkConfiguration *configuration = [IITYarpNetworkConfiguration sharedConfiguration];
+
+    [configuration setNameSpace:@"/icub01"];
+    [configuration setHost:@"10.0.0.15" port:10000];
+    BOOL result = [configuration initializeNetwork];
+    NSLog(@"Yarp network %@ initialized", result ? @"successful" : @"NOT");
     return YES;
 }
 
@@ -40,6 +47,8 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
+    [[IITYarpNetworkConfiguration sharedConfiguration] terminateNetwork];
 }
 
 @end

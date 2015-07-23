@@ -17,6 +17,8 @@
 		FF2CA5111B5C0389005EE193 /* IOLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA5101B5C0389005EE193 /* IOLTests.m */; };
 		FFCCDB481B60D38C0005207A /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCDB471B60D38C0005207A /* PreferencesViewController.m */; };
 		FFCCDB4D1B60D8900005207A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FFCCDB4C1B60D8900005207A /* AcousticModelEnglish.bundle */; };
+		FFCCDB791B6138250005207A /* yarp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCCDB5F1B6136630005207A /* yarp_iOS.framework */; };
+		FFCCDB7A1B6138250005207A /* yarp_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FFCCDB5F1B6136630005207A /* yarp_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FFDBD7B81B5CDF530085441C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7B71B5CDF530085441C /* AVFoundation.framework */; };
 		FFDBD7BA1B5CDF5D0085441C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */; };
 		FFDBD7BD1B5CE0C00085441C /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7BC1B5CE0C00085441C /* OpenEars.framework */; };
@@ -30,7 +32,49 @@
 			remoteGlobalIDString = FF2CA4ED1B5C0389005EE193;
 			remoteInfo = IOL;
 		};
+		FFCCDB5E1B6136630005207A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFCCDB591B6136620005207A /* yarp_iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FF4353371B5BECB700981100;
+			remoteInfo = yarp_iOS;
+		};
+		FFCCDB601B6136630005207A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFCCDB591B6136620005207A /* yarp_iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FF4353421B5BECB700981100;
+			remoteInfo = yarp_iOSTests;
+		};
+		FFCCDB621B6136680005207A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFCCDB591B6136620005207A /* yarp_iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FF4353361B5BECB700981100;
+			remoteInfo = yarp_iOS;
+		};
+		FFCCDB7B1B6138250005207A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFCCDB591B6136620005207A /* yarp_iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FF4353361B5BECB700981100;
+			remoteInfo = yarp_iOS;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FFCCDB7D1B6138250005207A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FFCCDB7A1B6138250005207A /* yarp_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FF2CA4EE1B5C0389005EE193 /* IOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +95,7 @@
 		FFCCDB461B60D38C0005207A /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
 		FFCCDB471B60D38C0005207A /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
 		FFCCDB4C1B60D8900005207A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		FFCCDB591B6136620005207A /* yarp_iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yarp_iOS.xcodeproj; path = ../../libs/yarp_iOS/yarp_iOS.xcodeproj; sourceTree = "<group>"; };
 		FFDBD7B71B5CDF530085441C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FFDBD7BC1B5CE0C00085441C /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = Frameworks/OpenEars.framework; sourceTree = "<group>"; };
@@ -61,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCCDB791B6138250005207A /* yarp_iOS.framework in Frameworks */,
 				FFDBD7BA1B5CDF5D0085441C /* AudioToolbox.framework in Frameworks */,
 				FFDBD7B81B5CDF530085441C /* AVFoundation.framework in Frameworks */,
 				FFDBD7BD1B5CE0C00085441C /* OpenEars.framework in Frameworks */,
@@ -80,6 +126,7 @@
 		FF2CA4E51B5C0389005EE193 = {
 			isa = PBXGroup;
 			children = (
+				FFCCDB591B6136620005207A /* yarp_iOS.xcodeproj */,
 				FF2CA4F01B5C0389005EE193 /* IOL */,
 				FF2CA50D1B5C0389005EE193 /* IOLTests */,
 				FFDBD7BB1B5CDF610085441C /* Frameworks */,
@@ -158,6 +205,15 @@
 			path = AcusticModels;
 			sourceTree = "<group>";
 		};
+		FFCCDB5A1B6136620005207A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFCCDB5F1B6136630005207A /* yarp_iOS.framework */,
+				FFCCDB611B6136630005207A /* yarp_iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FFDBD7BB1B5CDF610085441C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,10 +234,13 @@
 				FF2CA4EA1B5C0389005EE193 /* Sources */,
 				FF2CA4EB1B5C0389005EE193 /* Frameworks */,
 				FF2CA4EC1B5C0389005EE193 /* Resources */,
+				FFCCDB7D1B6138250005207A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FFCCDB631B6136680005207A /* PBXTargetDependency */,
+				FFCCDB7C1B6138250005207A /* PBXTargetDependency */,
 			);
 			name = IOL;
 			productName = IOL;
@@ -235,6 +294,12 @@
 			mainGroup = FF2CA4E51B5C0389005EE193;
 			productRefGroup = FF2CA4EF1B5C0389005EE193 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FFCCDB5A1B6136620005207A /* Products */;
+					ProjectRef = FFCCDB591B6136620005207A /* yarp_iOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FF2CA4ED1B5C0389005EE193 /* IOL */,
@@ -242,6 +307,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FFCCDB5F1B6136630005207A /* yarp_iOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = yarp_iOS.framework;
+			remoteRef = FFCCDB5E1B6136630005207A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FFCCDB611B6136630005207A /* yarp_iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = yarp_iOSTests.xctest;
+			remoteRef = FFCCDB601B6136630005207A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FF2CA4EC1B5C0389005EE193 /* Resources */ = {
@@ -292,6 +374,16 @@
 			isa = PBXTargetDependency;
 			target = FF2CA4ED1B5C0389005EE193 /* IOL */;
 			targetProxy = FF2CA50B1B5C0389005EE193 /* PBXContainerItemProxy */;
+		};
+		FFCCDB631B6136680005207A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = yarp_iOS;
+			targetProxy = FFCCDB621B6136680005207A /* PBXContainerItemProxy */;
+		};
+		FFCCDB7C1B6138250005207A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = yarp_iOS;
+			targetProxy = FFCCDB7B1B6138250005207A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
