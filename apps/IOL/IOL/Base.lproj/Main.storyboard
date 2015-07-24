@@ -57,25 +57,6 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Preferences-->
-        <scene sceneID="50u-2c-N6y">
-            <objects>
-                <viewController id="ai6-rb-1Zd" userLabel="Preferences" customClass="PreferencesViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0zv-jn-4b7"/>
-                        <viewControllerLayoutGuide type="bottom" id="Iv3-Kv-I4h"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6eE-Ah-Fx3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Preferences" id="M2D-sX-Tzx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i6O-FG-b5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="305" y="1036"/>
-        </scene>
         <!--Views-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -110,6 +91,26 @@
             </objects>
             <point key="canvasLocation" x="794" y="368"/>
         </scene>
+        <!--Preferences-->
+        <scene sceneID="UR6-Ve-g84">
+            <objects>
+                <tableViewController id="czT-WN-wrU" customClass="PreferencesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BzY-Tb-M3j">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="czT-WN-wrU" id="l9W-aR-gRC"/>
+                            <outlet property="delegate" destination="czT-WN-wrU" id="y0f-jz-kNr"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Preferences" id="7CT-jR-8Bf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1h-Yb-ZGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="1189"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -123,7 +124,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="ai6-rb-1Zd" kind="relationship" relationship="viewControllers" id="R1N-Af-RbU"/>
+                        <segue destination="czT-WN-wrU" kind="relationship" relationship="viewControllers" id="FtY-2t-xBO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

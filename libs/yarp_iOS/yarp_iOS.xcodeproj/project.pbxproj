@@ -28,6 +28,12 @@
 		FF4353BC1B5BF16D00981100 /* libYARP_OS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4353B01B5BF16500981100 /* libYARP_OS.a */; };
 		FF4353BD1B5BF16D00981100 /* libYARP_sig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4353B21B5BF16500981100 /* libYARP_sig.a */; };
 		FF4353D51B5BF9EA00981100 /* UIImage+Yarp.h in Headers */ = {isa = PBXBuildFile; fileRef = FF4353781B5BECFE00981100 /* UIImage+Yarp.h */; };
+		FFEC65701B62776200A6F38D /* IITYarpWrite.h in Headers */ = {isa = PBXBuildFile; fileRef = FFEC656E1B62776200A6F38D /* IITYarpWrite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFEC65711B62776200A6F38D /* IITYarpWrite.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFEC656F1B62776200A6F38D /* IITYarpWrite.mm */; };
+		FFEC65741B627E8000A6F38D /* NSDictionary+Bottle.h in Headers */ = {isa = PBXBuildFile; fileRef = FFEC65721B627E8000A6F38D /* NSDictionary+Bottle.h */; };
+		FFEC65751B627E8000A6F38D /* NSDictionary+Bottle.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFEC65731B627E8000A6F38D /* NSDictionary+Bottle.mm */; };
+		FFEC657C1B6295FA00A6F38D /* NSArray+Bottle.h in Headers */ = {isa = PBXBuildFile; fileRef = FFEC657A1B6295FA00A6F38D /* NSArray+Bottle.h */; };
+		FFEC657D1B6295FA00A6F38D /* NSArray+Bottle.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFEC657B1B6295FA00A6F38D /* NSArray+Bottle.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +132,12 @@
 		FF4353991B5BF11D00981100 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FF43539C1B5BF13D00981100 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FF43539E1B5BF16400981100 /* YARP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YARP.xcodeproj; path = ../../../yarp/build_ios/YARP.xcodeproj; sourceTree = "<group>"; };
+		FFEC656E1B62776200A6F38D /* IITYarpWrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITYarpWrite.h; sourceTree = "<group>"; };
+		FFEC656F1B62776200A6F38D /* IITYarpWrite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IITYarpWrite.mm; sourceTree = "<group>"; };
+		FFEC65721B627E8000A6F38D /* NSDictionary+Bottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Bottle.h"; sourceTree = "<group>"; };
+		FFEC65731B627E8000A6F38D /* NSDictionary+Bottle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSDictionary+Bottle.mm"; sourceTree = "<group>"; };
+		FFEC657A1B6295FA00A6F38D /* NSArray+Bottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Bottle.h"; sourceTree = "<group>"; };
+		FFEC657B1B6295FA00A6F38D /* NSArray+Bottle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSArray+Bottle.mm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +187,7 @@
 		FF4353391B5BECB700981100 /* yarp_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FFEC65621B62773F00A6F38D /* yarp write */,
 				FF4353881B5BED2E00981100 /* yarp read wrappers */,
 				FF4353871B5BED1600981100 /* Objects */,
 				FF4353891B5BED5F00981100 /* Utilities */,
@@ -266,6 +279,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FFEC65621B62773F00A6F38D /* yarp write */ = {
+			isa = PBXGroup;
+			children = (
+				FFEC656E1B62776200A6F38D /* IITYarpWrite.h */,
+				FFEC656F1B62776200A6F38D /* IITYarpWrite.mm */,
+				FFEC65721B627E8000A6F38D /* NSDictionary+Bottle.h */,
+				FFEC65731B627E8000A6F38D /* NSDictionary+Bottle.mm */,
+				FFEC657A1B6295FA00A6F38D /* NSArray+Bottle.h */,
+				FFEC657B1B6295FA00A6F38D /* NSArray+Bottle.mm */,
+			);
+			path = "yarp write";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -279,8 +305,11 @@
 				FF43537D1B5BECFE00981100 /* IITYarpNetworkConfiguration.h in Headers */,
 				FF43537F1B5BECFE00981100 /* IITYarpRead.h in Headers */,
 				FF4353831B5BECFE00981100 /* IITYarpReadImage.h in Headers */,
+				FFEC65701B62776200A6F38D /* IITYarpWrite.h in Headers */,
 				FF4353D51B5BF9EA00981100 /* UIImage+Yarp.h in Headers */,
 				FF43533D1B5BECB700981100 /* yarp_iOS.h in Headers */,
+				FFEC65741B627E8000A6F38D /* NSDictionary+Bottle.h in Headers */,
+				FFEC657C1B6295FA00A6F38D /* NSArray+Bottle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,8 +466,11 @@
 				FF4353841B5BECFE00981100 /* IITYarpReadImage.mm in Sources */,
 				FF4353861B5BECFE00981100 /* UIImage+Yarp.mm in Sources */,
 				FF4353821B5BECFE00981100 /* IITYarpReadBottle.mm in Sources */,
+				FFEC65711B62776200A6F38D /* IITYarpWrite.mm in Sources */,
+				FFEC65751B627E8000A6F38D /* NSDictionary+Bottle.mm in Sources */,
 				FF4353801B5BECFE00981100 /* IITYarpRead.mm in Sources */,
 				FF43537E1B5BECFE00981100 /* IITYarpNetworkConfiguration.mm in Sources */,
+				FFEC657D1B6295FA00A6F38D /* NSArray+Bottle.mm in Sources */,
 				FF43537C1B5BECFE00981100 /* IITYarpBottle.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
