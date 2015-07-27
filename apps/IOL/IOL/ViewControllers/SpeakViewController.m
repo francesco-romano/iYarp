@@ -12,6 +12,7 @@
 #import <OpenEars/OEPocketsphinxController.h>
 #import <OpenEars/OEAcousticModel.h>
 #import <OpenEars/OEEventsObserver.h>
+#import <yarp_iOS/IITYarpWrite.h>
 
 NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
@@ -20,6 +21,7 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 @property (nonatomic, strong) AVSpeechSynthesizer *synthesizer;
 @property (nonatomic, strong) NSString *languageModelPath;
 @property (nonatomic, strong) NSString *dictionaryPath;
+@property (nonatomic, strong) IITYarpWrite *outputPort;
 @property (weak, nonatomic) IBOutlet UITextView *recognizedSpeech;
 @end
 
@@ -31,6 +33,9 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
     self.recognizedSpeech.text = @"";
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
     [self.synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
+
+    self.outputPort = [[IITYarpWrite alloc] init];
+    [self.outputPort openPortNamed:@"/iIOL/outputPort:o"];
 
     //create delegate
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
@@ -83,6 +88,7 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 - (void)dealloc
 {
     [[OEPocketsphinxController sharedInstance] stopListening];
+    [self.outputPort closePort];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -109,7 +115,8 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
     [self.recognizedSpeech insertText:[NSString stringWithFormat:@"\n%@", hypothesis]];
 
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:hypothesis];
-    [self.synthesizer speakUtterance:utterance];
+//    [self.synthesizer speakUtterance:utterance];
+    [self.outputPort write:@{[NSNull null] : hypothesis}];
 
 }
 

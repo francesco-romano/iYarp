@@ -30,17 +30,20 @@
 
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         Bottle & currentBottle = resultantBottle.addList();
-        currentBottle.addString([[key description] UTF8String]);
+        if (![key isEqual:[NSNull null]])
+            currentBottle.addString([[key description] UTF8String]);
         if ([obj isKindOfClass:[NSArray class]]) {
             [(NSArray*)obj bottleRepresentation:currentBottle clearBottle:NO];
         } else if ([obj isKindOfClass:[NSDictionary class]]) {
             [(NSDictionary*)obj bottleRepresentation:currentBottle clearBottle:NO];
         } else if ([obj isKindOfClass:[NSNumber class]]) {
-            resultantBottle.addString([[(NSNumber*)obj stringValue] UTF8String]);
+            currentBottle.addString([[(NSNumber*)obj stringValue] UTF8String]);
         } else {
-            resultantBottle.addString([[obj description] UTF8String]);
+            currentBottle.addString([[obj description] UTF8String]);
         }
     }];
 
+
+    NSLog(@"%@ => %s", self, resultantBottle.toString().c_str());
 }
 @end
