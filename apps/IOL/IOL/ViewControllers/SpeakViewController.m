@@ -18,7 +18,6 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
 @interface SpeakViewController () <OEEventsObserverDelegate>
 @property (nonatomic, strong) OEEventsObserver *openEarsEventsObserver;
-@property (nonatomic, strong) AVSpeechSynthesizer *synthesizer;
 @property (nonatomic, strong) NSString *languageModelPath;
 @property (nonatomic, strong) NSString *dictionaryPath;
 @property (nonatomic, strong) IITYarpWrite *outputPort;
@@ -31,9 +30,7 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
     [super viewDidLoad];
 
     self.recognizedSpeech.text = @"";
-    self.synthesizer = [[AVSpeechSynthesizer alloc] init];
-    [self.synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
-
+    
     self.outputPort = [[IITYarpWrite alloc] init];
     [self.outputPort openPortNamed:@"/iIOL/outputPort:o"];
 
@@ -44,7 +41,13 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
     //create model generator
     OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init];
 
-    NSArray *words = [NSArray arrayWithObjects:@"WORD", @"STATEMENT", @"OTHER WORD", @"A PHRASE", nil];
+    NSArray *words = @[@"Return to home position", @"Calibrate on table",
+    @"Where is the ", @"Take the ", @"Grasp the ", @"See you soon",
+    @"I will teach you a new object",
+    @"Touch the ", @"Push the ", @"Let me show you how to reach the ",
+@"with your right arm", @"with your left arm", @"Forget", @"Forget all objects", @"Execute a plan", @"What is this", @"Explore the ",
+                       @"Octopus", @"Lego", @"Toy", @"Ladybug", @"Turtle", @"Car", @"Bottle", @"Box"];
+
     NSError *error = [languageModelGenerator generateLanguageModelFromArray:words withFilesNamed:iCubIOLLanguageModelFileName forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
 
     if (error) {
@@ -60,7 +63,7 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
     [[OEPocketsphinxController sharedInstance] requestMicPermission];
 
 #ifdef DEBUG
-    [OEPocketsphinxController sharedInstance].verbosePocketSphinx = TRUE;
+    [OEPocketsphinxController sharedInstance].verbosePocketSphinx = NO;
 #endif
 
 }
@@ -114,8 +117,6 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
     [self.recognizedSpeech insertText:[NSString stringWithFormat:@"\n%@", hypothesis]];
 
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:hypothesis];
-//    [self.synthesizer speakUtterance:utterance];
     [self.outputPort write:@{[NSNull null] : hypothesis}];
 
 }

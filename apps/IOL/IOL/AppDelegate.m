@@ -20,11 +20,11 @@
 
     IITYarpNetworkConfiguration *configuration = [IITYarpNetworkConfiguration sharedConfiguration];
 
-//    [configuration setNameSpace:@"/icub01"];
-//    [configuration setHost:@"10.0.0.15" port:10000];
+    [configuration setNameSpace:@"/icub01"];
+    [configuration setHost:@"10.0.0.15" port:10000];
 
-    [configuration setNameSpace:@"/fra"];
-    [configuration setHost:@"192.168.187.44" port:10000];
+//    [configuration setNameSpace:@"/fra"];
+//    [configuration setHost:@"192.168.187.44" port:10000];
     BOOL result = [configuration initializeNetwork];
     NSLog(@"Yarp network %@ initialized", result ? @"successful" : @"NOT");
     return YES;
