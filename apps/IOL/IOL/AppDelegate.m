@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import <yarp_iOS/IITYarpNetworkConfiguration.h>
+#import "InitialViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <YarpNetworkCheckDelegate>
 
 @end
 
@@ -18,16 +19,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    IITYarpNetworkConfiguration *configuration = [IITYarpNetworkConfiguration sharedConfiguration];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    InitialViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"InitializationView"];
+    viewController.delegate = self;
 
-    [configuration setNameSpace:@"/icub01"];
-    [configuration setHost:@"10.0.0.15" port:10000];
-
-//    [configuration setNameSpace:@"/fra"];
-//    [configuration setHost:@"192.168.187.44" port:10000];
-    BOOL result = [configuration initializeNetwork];
-    NSLog(@"Yarp network %@ initialized", result ? @"successful" : @"NOT");
+    [self.window makeKeyAndVisible];
+    [self.window.rootViewController presentViewController:viewController animated:YES completion:NULL];
     return YES;
+}
+
+- (void)viewController:(UIViewController *)viewController didCheckNetworkWithResult:(BOOL)result
+{
+    if (!result) {
+        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not initialize network" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [view show];
+    }
+    else {
+        [viewController dismissViewControllerAnimated:YES completion:^{
+
+        }];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

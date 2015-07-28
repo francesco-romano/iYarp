@@ -22,6 +22,7 @@
 		FFDBD7B81B5CDF530085441C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7B71B5CDF530085441C /* AVFoundation.framework */; };
 		FFDBD7BA1B5CDF5D0085441C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */; };
 		FFDBD7BD1B5CE0C00085441C /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7BC1B5CE0C00085441C /* OpenEars.framework */; };
+		FFDD9D431B67D27400012C54 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD9D421B67D27400012C54 /* InitialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		FFDBD7B71B5CDF530085441C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FFDBD7BC1B5CE0C00085441C /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = Frameworks/OpenEars.framework; sourceTree = "<group>"; };
+		FFDD9D411B67D27400012C54 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		FFDD9D421B67D27400012C54 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 				FF2CA4FC1B5C0389005EE193 /* RobotViewsViewController.m */,
 				FFCCDB461B60D38C0005207A /* PreferencesViewController.h */,
 				FFCCDB471B60D38C0005207A /* PreferencesViewController.m */,
+				FFDD9D411B67D27400012C54 /* InitialViewController.h */,
+				FFDD9D421B67D27400012C54 /* InitialViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				FF2CA4FD1B5C0389005EE193 /* RobotViewsViewController.m in Sources */,
 				FF2CA4F71B5C0389005EE193 /* AppDelegate.m in Sources */,
 				FFCCDB481B60D38C0005207A /* PreferencesViewController.m in Sources */,
+				FFDD9D431B67D27400012C54 /* InitialViewController.m in Sources */,
 				FF2CA4FA1B5C0389005EE193 /* SpeakViewController.m in Sources */,
 				FF2CA4F41B5C0389005EE193 /* main.m in Sources */,
 			);

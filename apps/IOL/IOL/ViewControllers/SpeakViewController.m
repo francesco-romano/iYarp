@@ -22,6 +22,7 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 @property (nonatomic, strong) NSString *dictionaryPath;
 @property (nonatomic, strong) IITYarpWrite *outputPort;
 @property (weak, nonatomic) IBOutlet UITextView *recognizedSpeech;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @end
 
 @implementation SpeakViewController
@@ -31,8 +32,8 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
     self.recognizedSpeech.text = @"";
     
-    self.outputPort = [[IITYarpWrite alloc] init];
-    [self.outputPort openPortNamed:@"/iIOL/outputPort:o"];
+//    self.outputPort = [[IITYarpWrite alloc] init];
+//    [self.outputPort openPortNamed:@"/iIOL/outputPort:o"];
 
     //create delegate
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
@@ -58,9 +59,8 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
     self.languageModelPath = [languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:iCubIOLLanguageModelFileName];
     self.dictionaryPath = [languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:iCubIOLLanguageModelFileName];
 
-    [self setupRecognition];
-
     [[OEPocketsphinxController sharedInstance] requestMicPermission];
+    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
 
 #ifdef DEBUG
     [OEPocketsphinxController sharedInstance].verbosePocketSphinx = NO;
@@ -68,24 +68,21 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
 }
 
-- (void)setupRecognition
+- (IITYarpWrite*)outputPort
 {
-    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
-    if (![[OEPocketsphinxController sharedInstance] isListening]) {
-        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.languageModelPath dictionaryAtPath:self.dictionaryPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+    if (!_outputPort) {
+        _outputPort = [[IITYarpWrite alloc] init];
+        [_outputPort openPortNamed:@"/iIOL/outputPort:o"];
     }
-    [[OEPocketsphinxController sharedInstance] suspendRecognition];
+    return _outputPort;
 }
 
 - (void) micPermissionCheckCompleted:(BOOL)result
 {
-    if (result) {
-        [self setupRecognition];
-    } else {
+    if (!result) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Mic permission not granted" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
-
 }
 
 - (void)dealloc
@@ -94,11 +91,29 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
     [self.outputPort closePort];
 }
 
+- (IBAction)recordButtonTouchedDown:(id)sender
+{
+    if (![[OEPocketsphinxController sharedInstance] isListening]) {
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.languageModelPath dictionaryAtPath:self.dictionaryPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+    }
+    if ([[OEPocketsphinxController sharedInstance] isSuspended])
+        [[OEPocketsphinxController sharedInstance] resumeRecognition];
+
+}
+
+- (IBAction)recordButtonTouchedUpInside:(id)sender
+{
+    [[OEPocketsphinxController sharedInstance] suspendRecognition];
+}
+
+- (IBAction)recordButtonTouchedUpOutside:(id)sender
+{
+    [[OEPocketsphinxController sharedInstance] suspendRecognition];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if ([[OEPocketsphinxController sharedInstance] isSuspended])
-        [[OEPocketsphinxController sharedInstance] resumeRecognition];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

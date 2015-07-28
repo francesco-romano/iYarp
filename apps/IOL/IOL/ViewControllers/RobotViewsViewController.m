@@ -28,8 +28,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     //@"/iolStateMachineHandler/imgLoc:o"
-    NSString *portName = @"/iolStateMachineHandler/imgLoc:o";
-//    NSString *portName = @"/icub/camcalib/left/out";
+//    NSString *portName = @"/iolStateMachineHandler/imgLoc:o";
+    NSString *portName = @"/icub/camcalib/left/out";
     [super viewWillAppear:animated];
     BOOL portConnected = [self.iolStatePort startReadingFromPort:portName localPortName:@"/iIOL/stateMachine/imgLoc:i"];
     if (!portConnected) {
