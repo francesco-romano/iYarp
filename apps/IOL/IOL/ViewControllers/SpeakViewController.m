@@ -13,6 +13,7 @@
 #import <OpenEars/OEAcousticModel.h>
 #import <OpenEars/OEEventsObserver.h>
 #import <yarp_iOS/IITYarpWrite.h>
+#import "IOLConstants.h"
 
 NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
@@ -65,13 +66,27 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
     [[OEPocketsphinxController sharedInstance] requestMicPermission];
     [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
 
+    [[NSUserDefaults standardUserDefaults] addObserver:self
+                                            forKeyPath:IOLDefaultsOutputPort options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:IOLDefaultsOutputPort] && object == [NSUserDefaults standardUserDefaults]) {
+
+        NSString *portName = [[NSUserDefaults standardUserDefaults] valueForKey:IOLDefaultsOutputPort];
+        if (![self.outputPort.writePortName isEqualToString:portName] && [self.outputPort isOpen]) {
+            [self.outputPort closePort];
+            [self.outputPort openPortNamed:portName];
+        }
+    }
 }
 
 - (IITYarpWrite*)outputPort
 {
     if (!_outputPort) {
         _outputPort = [[IITYarpWrite alloc] init];
-        [_outputPort openPortNamed:@"/iIOL/outputPort:o"];
+        [_outputPort openPortNamed:[[NSUserDefaults standardUserDefaults] valueForKey:IOLDefaultsOutputPort]];
     }
     return _outputPort;
 }
@@ -88,6 +103,7 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 {
     [[OEPocketsphinxController sharedInstance] stopListening];
     [self.outputPort closePort];
+    [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:IOLDefaultsOutputPort];
 }
 
 - (IBAction)recordButtonTouchedDown:(id)sender

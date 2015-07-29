@@ -11,7 +11,7 @@
 @interface IITYarpWrite : NSObject
 @property (nonatomic, readonly, strong) NSString *writePortName;
 @property (nonatomic, readonly, strong) NSString *destinationPortName;
-@property (nonatomic, readonly, getter=isConnected) BOOL connected;
+@property (nonatomic, readonly, getter=isOpen) BOOL open;
 
 - (BOOL)openPortNamed:(NSString*)portName;
 - (void)closePort;

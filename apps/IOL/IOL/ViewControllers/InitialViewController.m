@@ -28,30 +28,13 @@
     [configuration setHost:[defaults valueForKey:IOLDefaultsHost]
                       port:[[defaults valueForKey:IOLDefaultsPort] intValue]];
 
-    __block BOOL result = NO;
-    __block BOOL finished = NO;
-    NSOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        result = [configuration initializeNetwork];
-    }];
-    operation.completionBlock = ^{
-        finished = YES;
+
+    [configuration initializeNetworkWithTimeout:3 completionHandler:^(BOOL result) {
         [self.activityView stopAnimating];
         NSLog(@"Yarp network %@ initialized", result ? @"successful" : @"NOT");
         [self.delegate viewController:self didCheckNetworkWithResult:result];
-    };
 
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [queue addOperation:operation];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (!finished) {
-            [operation cancel];
-            [self.activityView stopAnimating];
-            NSLog(@"Yarp network %@ initialized", result ? @"successful" : @"NOT");
-            [self.delegate viewController:self didCheckNetworkWithResult:result];
-        }
-    });
-
+    }];
 }
 
 @end

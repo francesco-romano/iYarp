@@ -110,7 +110,7 @@
 {
     using namespace yarp::os;
     if (![[self nameSpace] length]) {
-        completionHandler(NO);
+        if (completionHandler) completionHandler(NO);
     }
 
     Network::init();
@@ -125,7 +125,7 @@
         } else {
             self.initialize = YES;
         }
-        completionHandler(check ? YES : NO);
+        if (completionHandler) completionHandler(check ? YES : NO);
     }];
 
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -136,7 +136,7 @@
             if (!finished) {
                 [operation cancel];
                 Network::fini();
-                completionHandler(check ? YES : NO);
+                if (completionHandler) completionHandler(check ? YES : NO);
             }
         });
     }

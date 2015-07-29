@@ -7,6 +7,7 @@
 //
 
 #import "RobotViewsViewController.h"
+#import "IOLConstants.h"
 #import <yarp_iOS/IITYarpReadImage.h>
 
 @interface RobotViewsViewController () <IITYarpReadDelegate>
@@ -27,14 +28,15 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //@"/iolStateMachineHandler/imgLoc:o"
-//    NSString *portName = @"/iolStateMachineHandler/imgLoc:o";
-    NSString *portName = @"/icub/camcalib/left/out";
+
+    NSString *portName = [[NSUserDefaults standardUserDefaults] valueForKey:IOLDefaultsStateViewPort];
     [super viewWillAppear:animated];
+    //TODO: move source port to preferences
     BOOL portConnected = [self.iolStatePort startReadingFromPort:portName localPortName:@"/iIOL/stateMachine/imgLoc:i"];
     if (!portConnected) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not connect to remote port" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Error" message:@"Could not connect to remote port" preferredStyle:UIAlertControllerStyleAlert];
+        [alertView addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:NULL]];
+        [self presentViewController:alertView animated:YES completion:NULL];
     }
 
 }
