@@ -21,6 +21,7 @@
 - (BOOL)setHost:(NSString *)host port:(int)port nameSpace:(NSString*)nameSpace;
 
 - (BOOL)initializeNetwork;
+- (void)initializeNetworkWithTimeout:(double)timeout completionHandler:(void (^)(BOOL))completionHandler;
 - (void)terminateNetwork;
 
 @end

@@ -32,16 +32,19 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
     self.recognizedSpeech.text = @"";
     
-//    self.outputPort = [[IITYarpWrite alloc] init];
-//    [self.outputPort openPortNamed:@"/iIOL/outputPort:o"];
-
     //create delegate
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
     [self.openEarsEventsObserver setDelegate:self];
 
+#ifdef DEBUG
+    [OEPocketsphinxController sharedInstance].verbosePocketSphinx = NO;
+#endif
+
     //create model generator
     OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init];
 
+//    NSError *error = [languageModelGenerator generateLanguageModelFromTextFile:[[[NSBundle mainBundle] URLForResource:@"grammar" withExtension:nil] absoluteString] withFilesNamed:iCubIOLLanguageModelFileName forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
+////
     NSArray *words = @[@"Return to home position", @"Calibrate on table",
     @"Where is the ", @"Take the ", @"Grasp the ", @"See you soon",
     @"I will teach you a new object",
@@ -61,10 +64,6 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
     [[OEPocketsphinxController sharedInstance] requestMicPermission];
     [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
-
-#ifdef DEBUG
-    [OEPocketsphinxController sharedInstance].verbosePocketSphinx = NO;
-#endif
 
 }
 

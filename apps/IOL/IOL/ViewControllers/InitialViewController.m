@@ -8,6 +8,7 @@
 
 #import "InitialViewController.h"
 #import <yarp_iOS/IITYarpNetworkConfiguration.h>
+#include "IOLConstants.h"
 
 @interface InitialViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityView;
@@ -21,11 +22,12 @@
     [self.activityView startAnimating];
     IITYarpNetworkConfiguration *configuration = [IITYarpNetworkConfiguration sharedConfiguration];
 
-    [configuration setNameSpace:@"/icub01"];
-    [configuration setHost:@"10.0.0.15" port:10000];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-//    [configuration setNameSpace:@"/fra"];
-//    [configuration setHost:@"192.168.187.43" port:10000];
+    [configuration setNameSpace:[defaults valueForKey:IOLDefaultsNamespace]];
+    [configuration setHost:[defaults valueForKey:IOLDefaultsHost]
+                      port:[[defaults valueForKey:IOLDefaultsPort] intValue]];
+
     __block BOOL result = NO;
     __block BOOL finished = NO;
     NSOperation *operation = [NSBlockOperation blockOperationWithBlock:^{

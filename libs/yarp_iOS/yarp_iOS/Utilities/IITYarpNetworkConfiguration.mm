@@ -106,6 +106,42 @@
     return YES;
 }
 
+- (void)initializeNetworkWithTimeout:(double)timeout completionHandler:(void (^)(BOOL))completionHandler
+{
+    using namespace yarp::os;
+    if (![[self nameSpace] length]) {
+        completionHandler(NO);
+    }
+
+    Network::init();
+
+    __block BOOL check = NO;
+    __block BOOL finished = NO;
+    NSOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        check = Network::checkNetwork();
+        finished = YES;
+        if (!check) {
+            Network::fini();
+        } else {
+            self.initialize = YES;
+        }
+        completionHandler(check ? YES : NO);
+    }];
+
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:operation];
+
+    if (timeout > 0) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(timeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (!finished) {
+                [operation cancel];
+                Network::fini();
+                completionHandler(check ? YES : NO);
+            }
+        });
+    }
+}
+
 - (void)terminateNetwork
 {
     yarp::os::Network::fini();

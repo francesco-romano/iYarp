@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <yarp_iOS/IITYarpNetworkConfiguration.h>
 #import "InitialViewController.h"
+#import "IOLConstants.h"
 
 @interface AppDelegate () <YarpNetworkCheckDelegate>
 
@@ -16,6 +17,20 @@
 
 @implementation AppDelegate
 
++ (void)initialize
+{
+    //Default preferences
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults registerDefaults:@{
+                                     IOLDefaultsNamespace: @"/root",
+                                     IOLDefaultsHost : @"127.0.0.1",
+                                     IOLDefaultsPort : @(10000),
+
+                                     IOLDefaultsStateViewPort : @"/iolStateMachineHandler/imgLoc:o",
+                                     IOLDefaultsOutputPort : @"/iIOL/outputPort:o"
+                                     }];
+    [userDefaults synchronize];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -31,8 +46,19 @@
 - (void)viewController:(UIViewController *)viewController didCheckNetworkWithResult:(BOOL)result
 {
     if (!result) {
-        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not initialize network" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [view show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                       message:@"Could not initialize network"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  [viewController dismissViewControllerAnimated:YES completion:^{
+                                                                      [(UITabBarController*)self.window.rootViewController setSelectedIndex:2
+                                                                       ];                                                                  }];
+                                                              }];
+
+        [alert addAction:defaultAction];
+        [viewController presentViewController:alert animated:YES completion:nil];
+
     }
     else {
         [viewController dismissViewControllerAnimated:YES completion:^{
