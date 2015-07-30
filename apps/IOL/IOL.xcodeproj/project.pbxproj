@@ -15,6 +15,7 @@
 		FF2CA5021B5C0389005EE193 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA5011B5C0389005EE193 /* Images.xcassets */; };
 		FF2CA5051B5C0389005EE193 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA5031B5C0389005EE193 /* LaunchScreen.xib */; };
 		FF2CA5111B5C0389005EE193 /* IOLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA5101B5C0389005EE193 /* IOLTests.m */; };
+		FF2F1AC11B6A6CCB00EAA7B8 /* FrameCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F1AC01B6A6CCB00EAA7B8 /* FrameCaptureViewController.m */; };
 		FFC865D91B68BE5B00C3B0C9 /* IOLConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC865D81B68BE5B00C3B0C9 /* IOLConstants.m */; };
 		FFCCDB481B60D38C0005207A /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCDB471B60D38C0005207A /* PreferencesViewController.m */; };
 		FFCCDB4D1B60D8900005207A /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FFCCDB4C1B60D8900005207A /* AcousticModelEnglish.bundle */; };
@@ -95,6 +96,8 @@
 		FF2CA50A1B5C0389005EE193 /* IOLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2CA50F1B5C0389005EE193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF2CA5101B5C0389005EE193 /* IOLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOLTests.m; sourceTree = "<group>"; };
+		FF2F1ABF1B6A6CCB00EAA7B8 /* FrameCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameCaptureViewController.h; sourceTree = "<group>"; };
+		FF2F1AC01B6A6CCB00EAA7B8 /* FrameCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameCaptureViewController.m; sourceTree = "<group>"; };
 		FFC865D81B68BE5B00C3B0C9 /* IOLConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOLConstants.m; sourceTree = "<group>"; };
 		FFC865DB1B68BE6D00C3B0C9 /* IOLConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOLConstants.h; sourceTree = "<group>"; };
 		FFCCDB461B60D38C0005207A /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				FFCCDB471B60D38C0005207A /* PreferencesViewController.m */,
 				FFDD9D411B67D27400012C54 /* InitialViewController.h */,
 				FFDD9D421B67D27400012C54 /* InitialViewController.m */,
+				FF2F1ABF1B6A6CCB00EAA7B8 /* FrameCaptureViewController.h */,
+				FF2F1AC01B6A6CCB00EAA7B8 /* FrameCaptureViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				FFCCDB481B60D38C0005207A /* PreferencesViewController.m in Sources */,
 				FFDD9D431B67D27400012C54 /* InitialViewController.m in Sources */,
 				FF2CA4FA1B5C0389005EE193 /* SpeakViewController.m in Sources */,
+				FF2F1AC11B6A6CCB00EAA7B8 /* FrameCaptureViewController.m in Sources */,
 				FF2CA4F41B5C0389005EE193 /* main.m in Sources */,
 				FFC865D91B68BE5B00C3B0C9 /* IOLConstants.m in Sources */,
 			);
