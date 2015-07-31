@@ -15,4 +15,5 @@ namespace yarp {
 
 @interface UIImage (Yarp)
 + (UIImage *)imageWithYarpImage:(yarp::sig::Image&)image bitsPerComponents:(unsigned)bitsPerComponents;
+- (void)yarpImage:(yarp::sig::Image&)image;
 @end

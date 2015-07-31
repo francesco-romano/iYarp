@@ -48,4 +48,25 @@
     return image;
 }
 
+- (void)yarpImage:(yarp::sig::Image&)image
+{
+    image.zero();
+    image.resize(self.size.width, self.size.height);
+
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    NSUInteger bytesPerPixel = 3;
+    NSUInteger bytesPerRow = bytesPerPixel * self.size.width;
+    NSUInteger bitsPerComponent = 8;
+    CGContextRef context = CGBitmapContextCreate(image.getRawImage(), self.size.width, self.size.height,
+                                                 bitsPerComponent, bytesPerRow, colorSpace,
+                                                 kCGImageAlphaNone);
+    CGColorSpaceRelease(colorSpace);
+
+    if (!context) return;
+    CGImageRef imageRef = [self CGImage];
+    CGContextDrawImage(context, CGRectMake(0, 0, self.size.width, self.size.height), imageRef);
+    CGContextRelease(context);
+
+}
+
 @end

@@ -13,13 +13,15 @@
 @property (nonatomic, readonly, strong) NSString *destinationPortName;
 @property (nonatomic, readonly, getter=isOpen) BOOL open;
 
++ (instancetype)yarpWriteForObjectClass:(Class)classType;
+
 - (BOOL)openPortNamed:(NSString*)portName;
 - (void)closePort;
 
 - (BOOL)connectToDestinationPortNamed:(NSString*)destinationPortName;
 - (BOOL)disconnectPort;
 
-- (void)write: (NSDictionary*)data;
-- (void)write: (NSDictionary*)data blocking:(BOOL)blocking;
+- (void)write: (id)data;
+- (void)write: (id)data blocking:(BOOL)blocking;
 
 @end

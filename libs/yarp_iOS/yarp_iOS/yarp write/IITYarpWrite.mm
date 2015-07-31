@@ -7,81 +7,64 @@
 //
 
 #import "IITYarpWrite.h"
+#import <UIKit/UIKit.h>
+
 #import "NSDictionary+Bottle.h"
+#import "IITYarpWriteBottle.h"
+#import "IITYarpWriteImage.h"
 #import <yarp/os/BufferedPort.h>
 #import <yarp/os/Bottle.h>
 #import <yarp/os/Network.h>
 
-@interface IITYarpWrite () {
-    yarp::os::BufferedPort<yarp::os::Bottle> *_outputPort;
-}
-@property (nonatomic, readwrite, strong) NSString *writePortName;
-@property (nonatomic, readwrite, strong) NSString *destinationPortName;
-
+@interface IITYarpWrite ()
 @end
 
 @implementation IITYarpWrite
 
++ (instancetype)yarpWriteForObjectClass:(Class)classType
+{
+    if ([classType isSubclassOfClass:[NSDictionary class]]) {
+        return [[IITYarpWriteBottle alloc] init];
+    } else if ([classType isSubclassOfClass:[UIImage class]]) {
+        return [[IITYarpWriteImage alloc] init];
+    }
+    return nil;
+}
+
 - (BOOL)openPortNamed:(NSString*)portName
 {
-    if (_outputPort) {
-        [self closePort];
-    }
-    if (![portName length]) return NO;
-    self.writePortName = portName;
-
-    _outputPort = new yarp::os::BufferedPort<yarp::os::Bottle>();
-    if (!_outputPort) return NO;
-
-    return _outputPort->open([portName UTF8String]) ? YES : NO;
+    return NO;
 }
 
 - (void)closePort
 {
-    if (_outputPort && !_outputPort->isClosed()) {
-        _outputPort->close();
-        delete _outputPort;
-        _outputPort = 0;
-    }
 }
 
 - (BOOL)isConnected
 {
-    if (!_outputPort) return NO;
-    if (_outputPort->isClosed()) return NO;
-    //???
-    return YES;
+    return NO;
 }
+
+- (NSString*) writePortName { return nil; }
+- (NSString*) destinationPortName {return nil; }
+- (BOOL) isOpen { return NO; }
+
 
 - (BOOL)connectToDestinationPortNamed:(NSString*)destinationPortName
 {
-    if (!_outputPort || _outputPort->isClosed()) return NO;
-    self.destinationPortName = destinationPortName;
-
-    using namespace yarp::os;
-    return Network::connect([self.writePortName UTF8String], [self.destinationPortName UTF8String]) ? YES : NO;
+    return NO;
 }
 
 - (BOOL)disconnectPort
 {
-    using namespace yarp::os;
-
-    return Network::disconnect([self.writePortName UTF8String], [self.destinationPortName UTF8String]) ? YES : NO;
+    return NO;
 }
 
 - (void)write:(NSDictionary*)data
 {
-    [self write:data blocking:NO];
 }
 
 - (void)write:(NSDictionary*)data blocking:(BOOL)blocking
 {
-    using namespace yarp::os;
-
-    if (!_outputPort || _outputPort->isClosed()) return;
-    Bottle &bottle = _outputPort->prepare();
-    [data bottleRepresentation:bottle clearBottle:YES];
-    _outputPort->write(blocking ? true : false);
-
 }
 @end
