@@ -13,7 +13,7 @@
 #import <yarp/os/Network.h>
 
 @interface IITYarpWriteImage () {
-    yarp::os::BufferedPort<yarp::sig::ImageOf<yarp::sig::PixelRgb> > *_outputPort;
+    yarp::os::BufferedPort<yarp::sig::ImageOf<yarp::sig::PixelRgba> > *_outputPort;
 }
 @property (nonatomic, readwrite, strong) NSString *writePortName;
 @property (nonatomic, readwrite, strong) NSString *destinationPortName;
@@ -31,7 +31,7 @@
     if (![portName length]) return NO;
     self.writePortName = portName;
 
-    _outputPort = new yarp::os::BufferedPort<yarp::sig::ImageOf<yarp::sig::PixelRgb> >();
+    _outputPort = new yarp::os::BufferedPort<yarp::sig::ImageOf<yarp::sig::PixelRgba> >();
     if (!_outputPort) return NO;
 
     return _outputPort->open([portName UTF8String]) ? YES : NO;

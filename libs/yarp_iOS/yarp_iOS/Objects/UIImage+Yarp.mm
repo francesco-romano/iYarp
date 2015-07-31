@@ -54,12 +54,12 @@
     image.resize(self.size.width, self.size.height);
 
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    NSUInteger bytesPerPixel = 3;
+    NSUInteger bytesPerPixel = 4;
     NSUInteger bytesPerRow = bytesPerPixel * self.size.width;
     NSUInteger bitsPerComponent = 8;
     CGContextRef context = CGBitmapContextCreate(image.getRawImage(), self.size.width, self.size.height,
                                                  bitsPerComponent, bytesPerRow, colorSpace,
-                                                 kCGImageAlphaNone);
+                                                 kCGImageAlphaNoneSkipLast);
     CGColorSpaceRelease(colorSpace);
 
     if (!context) return;

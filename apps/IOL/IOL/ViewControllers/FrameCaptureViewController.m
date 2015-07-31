@@ -8,12 +8,13 @@
 
 #import "FrameCaptureViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <yarp_iOS/IITYarpWrite.h>
 
 @interface FrameCaptureViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
-@property (nonatomic, weak) IBOutlet UIView *previewView;
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic) BOOL cameraAuthorized;
+@property (nonatomic, strong) IITYarpWrite *imagePort;
 @end
 
 @implementation FrameCaptureViewController
@@ -22,6 +23,8 @@
     [super viewDidLoad];
 
     //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+    self.imagePort = [IITYarpWrite yarpWriteForObjectClass:[UIImage class]];
+    [self.imagePort openPortNamed:@"/iIOL/capture:o"];
 
     NSError *error = nil;
     self.cameraAuthorized = NO;
@@ -92,11 +95,17 @@
     //    });
 }
 
+- (void)dealloc
+{
+    [self.imagePort closePort];
+}
+
 - (void)captureOutput:(AVCaptureOutput *)captureOutput
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection
 {
-    NSLog(@"Frame");
+    UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
+    [self.imagePort write:image];
 }
 
 - (void)viewDidAppear:(BOOL)animated
