@@ -66,8 +66,8 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
     [[OEPocketsphinxController sharedInstance] requestMicPermission];
     [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
 
-    [[NSUserDefaults standardUserDefaults] addObserver:self
-                                            forKeyPath:IOLDefaultsOutputPort options:NSKeyValueObservingOptionNew context:NULL];
+   // [[NSUserDefaults standardUserDefaults] addObserver:self
+   //                                         forKeyPath:IOLDefaultsOutputPort options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -102,8 +102,8 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 - (void)dealloc
 {
     [[OEPocketsphinxController sharedInstance] stopListening];
-    [self.outputPort closePort];
-    [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:IOLDefaultsOutputPort];
+    //[self.outputPort closePort];
+    //[[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:IOLDefaultsOutputPort];
 }
 
 - (IBAction)recordButtonTouchedDown:(id)sender
@@ -147,7 +147,7 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
     [self.recognizedSpeech insertText:[NSString stringWithFormat:@"\n%@", hypothesis]];
 
-    [self.outputPort write:@{[NSNull null] : hypothesis}];
+    //[self.outputPort write:@{[NSNull null] : hypothesis}];
 
 }
 

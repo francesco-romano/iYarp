@@ -43,7 +43,6 @@
         }
     }];
 
-
     NSLog(@"%@ => %s", self, resultantBottle.toString().c_str());
 }
 @end

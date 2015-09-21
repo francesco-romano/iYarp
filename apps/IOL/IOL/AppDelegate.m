@@ -22,12 +22,12 @@
     //Default preferences
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults registerDefaults:@{
-                                     IOLDefaultsNamespace: @"/root",
-                                     IOLDefaultsHost : @"127.0.0.1",
+                                     IOLDefaultsNamespace: @"/vtikha",
+                                     IOLDefaultsHost : @"10.255.10.97",
                                      IOLDefaultsPort : @(10000),
 
                                      IOLDefaultsStateViewPort : @"/iolStateMachineHandler/imgLoc:o",
-                                     IOLDefaultsOutputPort : @"/iIOL/outputPort:o"
+                                     IOLDefaultsOutputPort : @"/yarpIOS/speechPort:o"
                                      }];
     [userDefaults synchronize];
 }
