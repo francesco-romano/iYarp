@@ -139,16 +139,16 @@ static void DeriveBufferSize (AudioQueueRef audioQueue, AudioStreamBasicDescript
 
             [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
             [session setActive:YES error:nil];
-            NSDictionary *settings = @{AVSampleRateKey: @(16000),
-                                       AVFormatIDKey: @(kAudioFormatLinearPCM),
-                                       AVNumberOfChannelsKey: @(1),
-                                       AVLinearPCMBitDepthKey: @(16),
-                                       AVLinearPCMIsFloatKey: @(NO)};
-
+            
+            NSDictionary *settings = @{AVSampleRateKey:          [NSNumber numberWithFloat: 44100.0],
+                                       AVFormatIDKey:            [NSNumber numberWithInt: kAudioFormatAppleLossless],
+                                       AVNumberOfChannelsKey:    [NSNumber numberWithInt: 2],
+                                       AVEncoderAudioQualityKey: [NSNumber numberWithInt: AVAudioQualityMin]};
             NSError *error = nil;
             self.recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL URLWithString:@"/dev/null"] settings:settings error:&error];
-            [self.recorder setMeteringEnabled:YES];
             [self.recorder prepareToRecord];
+            [self.recorder setMeteringEnabled:YES];
+
         }];
 
     }

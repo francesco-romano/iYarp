@@ -35,11 +35,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    InitialViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"InitializationView"];
-//    viewController.delegate = self;
-//
-//    [self.window makeKeyAndVisible];
-//    [self.window.rootViewController presentViewController:viewController animated:YES completion:NULL];
+    InitialViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"InitializationView"];
+    viewController.delegate = self;
+
+    [self.window makeKeyAndVisible];
+    [self.window.rootViewController presentViewController:viewController animated:YES completion:NULL];
     return YES;
 }
 
