@@ -461,11 +461,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="qxO-qM-TuE" kind="relationship" relationship="viewControllers" id="d8L-uB-hO7"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="czT-WN-wrU" kind="relationship" relationship="viewControllers" id="FtY-2t-xBO"/>
                         <segue destination="KaP-Bu-zbA" kind="relationship" relationship="viewControllers" id="nx4-2h-m5p"/>
-                        <segue destination="qxO-qM-TuE" kind="relationship" relationship="viewControllers" id="d8L-uB-hO7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

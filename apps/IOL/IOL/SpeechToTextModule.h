@@ -8,14 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-
-
 @class SpeechToTextModule;
 
 @protocol SpeechToTextModuleDelegate <NSObject>
 
--(void)speechModule: (SpeechToTextModule*) module didReceiveResponse: (NSString*) response;
--(void)speechModule: (SpeechToTextModule*) module didFailedResponse: (NSError*) error;
+-(void)speechModule:(SpeechToTextModule*) module didReceiveResponse:(NSString*) response;
+-(void)speechModule:(SpeechToTextModule*) module didFailedWithError:(NSError*) error;
 
 @end
 
@@ -33,6 +31,8 @@
 // so don't pass NO unless you really mean it.
 - (void)stopRecording;
 
+
+- (CGFloat)averagePowerForChannel:(NSUInteger)channel;
 
 
 @end

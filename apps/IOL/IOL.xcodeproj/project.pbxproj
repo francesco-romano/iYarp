@@ -146,13 +146,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		225CA7E41BB03EDD00DD7C30 /* SineWaveForm */ = {
+		225CA7E41BB03EDD00DD7C30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				225CA7E61BB03F0000DD7C30 /* SCSiriWaveformView.h */,
 				225CA7E71BB03F0000DD7C30 /* SCSiriWaveformView.m */,
 			);
-			name = SineWaveForm;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		FF2CA4E51B5C0389005EE193 = {
@@ -179,14 +179,13 @@
 		FF2CA4F01B5C0389005EE193 /* IOL */ = {
 			isa = PBXGroup;
 			children = (
-				225CA7E41BB03EDD00DD7C30 /* SineWaveForm */,
-				225CA7DD1BAC18A600DD7C30 /* SpeechToTextModule.h */,
-				225CA7DE1BAC18AC00DD7C30 /* SpeechToTextModule.m */,
 				FF2CA4F51B5C0389005EE193 /* AppDelegate.h */,
 				FF2CA4F61B5C0389005EE193 /* AppDelegate.m */,
 				FFC865DB1B68BE6D00C3B0C9 /* IOLConstants.h */,
 				FFC865D81B68BE5B00C3B0C9 /* IOLConstants.m */,
+				FF8117411BB0707F00E01C16 /* Utilities */,
 				FFCCDB491B60D3CE0005207A /* ViewControllers */,
+				225CA7E41BB03EDD00DD7C30 /* Views */,
 				FF2CA4FE1B5C0389005EE193 /* Main.storyboard */,
 				FF2CA5011B5C0389005EE193 /* Images.xcassets */,
 				FF2CA5031B5C0389005EE193 /* LaunchScreen.xib */,
@@ -220,6 +219,15 @@
 				FF2CA50F1B5C0389005EE193 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF8117411BB0707F00E01C16 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				225CA7DD1BAC18A600DD7C30 /* SpeechToTextModule.h */,
+				225CA7DE1BAC18AC00DD7C30 /* SpeechToTextModule.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		FFCCDB491B60D3CE0005207A /* ViewControllers */ = {

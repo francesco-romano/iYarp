@@ -126,7 +126,7 @@
     [self.outputPort write:@{[NSNull null] : response}];
 }
 
-- (void)speechModule:(SpeechToTextModule *)module didFailedResponse:(NSError *)error
+- (void)speechModule:(SpeechToTextModule *)module didFailedWithError:(NSError *)error
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                    message:error.localizedDescription
