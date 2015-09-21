@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypN-Xu-Lft" customClass="SCSiriWaveformView">
-                                <rect key="frame" x="28" y="287" width="544" height="188"/>
+                                <rect key="frame" x="0.0" y="287" width="600" height="188"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -62,9 +62,9 @@
                             <constraint firstItem="eNG-Tb-xzb" firstAttribute="top" secondItem="ypN-Xu-Lft" secondAttribute="bottom" constant="8" symbolic="YES" id="Jfw-yz-okd"/>
                             <constraint firstItem="haH-tb-UJy" firstAttribute="top" secondItem="luM-Bc-1HJ" secondAttribute="bottom" constant="8" id="QHa-xj-9aC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="haH-tb-UJy" secondAttribute="trailing" id="VqK-UY-Z3O"/>
-                            <constraint firstItem="ypN-Xu-Lft" firstAttribute="leading" secondItem="2Xd-HC-JJd" secondAttribute="leadingMargin" constant="8" id="WRO-U5-Sf5"/>
+                            <constraint firstItem="ypN-Xu-Lft" firstAttribute="leading" secondItem="2Xd-HC-JJd" secondAttribute="leadingMargin" constant="-20" id="WRO-U5-Sf5"/>
                             <constraint firstItem="eNG-Tb-xzb" firstAttribute="top" secondItem="haH-tb-UJy" secondAttribute="bottom" constant="8" id="XrC-zM-D5x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ypN-Xu-Lft" secondAttribute="trailing" constant="8" id="Yu8-x4-Tf2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ypN-Xu-Lft" secondAttribute="trailing" constant="-20" id="Yu8-x4-Tf2"/>
                             <constraint firstItem="eNG-Tb-xzb" firstAttribute="centerX" secondItem="2Xd-HC-JJd" secondAttribute="centerX" id="eLd-n3-Lox"/>
                             <constraint firstItem="luM-Bc-1HJ" firstAttribute="centerX" secondItem="2Xd-HC-JJd" secondAttribute="centerX" id="ne8-VV-9cQ"/>
                             <constraint firstItem="ypN-Xu-Lft" firstAttribute="top" secondItem="haH-tb-UJy" secondAttribute="bottom" constant="8" symbolic="YES" id="rjA-7I-kLO"/>
@@ -104,13 +104,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recognized Speech" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZN-3E-aax">
-                                <rect key="frame" x="224" y="20" width="153" height="21"/>
+                                <rect key="frame" x="224" y="20" width="152.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fos-IF-OTS">
-                                <rect key="frame" x="16" y="49" width="568" height="426"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fos-IF-OTS">
+                                <rect key="frame" x="20" y="48.5" width="560" height="426.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -484,8 +484,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Interactive Object Learning on iOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfk-vh-e2W">
-                                <rect key="frame" x="168" y="289" width="264" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interactive Object Learning on iOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfk-vh-e2W">
+                                <rect key="frame" x="169.5" y="289.5" width="261.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
