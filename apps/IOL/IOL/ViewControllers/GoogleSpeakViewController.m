@@ -7,11 +7,14 @@
 //
 
 #import "GoogleSpeakViewController.h"
+#import <AVFoundation/AVFoundation.h>
+
 #import "SpeechToTextModule.h"
-#import <yarp_iOS/IITYarpWrite.h>
 #import "IOLConstants.h"
 #import "SCSiriWaveformView.h"
-#import <AVFoundation/AVFoundation.h>
+
+#import <yarp_iOS/IITYarpWrite.h>
+
 
 @interface GoogleSpeakViewController () <SpeechToTextModuleDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *recognition;
@@ -20,8 +23,6 @@
 
 @property (nonatomic, strong) IITYarpWrite *outputPort;
 @property (nonatomic, strong) SpeechToTextModule *speechRecognizer;
-
-@property (nonatomic, strong) AVAudioRecorder *recorder;
 
 @end
 
@@ -39,33 +40,13 @@
     
     [[NSUserDefaults standardUserDefaults] addObserver:self
                                             forKeyPath:IOLDefaultsOutputPort options:NSKeyValueObservingOptionNew context:NULL];
-    
-    NSDictionary *settings = @{AVSampleRateKey:          [NSNumber numberWithFloat: 44100.0],
-                               AVFormatIDKey:            [NSNumber numberWithInt: kAudioFormatAppleLossless],
-                               AVNumberOfChannelsKey:    [NSNumber numberWithInt: 2],
-                               AVEncoderAudioQualityKey: [NSNumber numberWithInt: AVAudioQualityMin]};
 
-    
-    NSError *error;
-    NSURL *url = [NSURL fileURLWithPath:@"/dev/null"];
-    self.recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
-    
-    if(error) {
-        NSLog(@"Ups, could not create recorder %@", error);
-        return;
-    }
-    
     CADisplayLink *displaylink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateMeters)];
     [displaylink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     
     [self.waveformView setWaveColor:[UIColor grayColor]];
     [self.waveformView setPrimaryWaveLineWidth:3.0f];
     [self.waveformView setSecondaryWaveLineWidth:1.0];
-    
-    [self.recorder prepareToRecord];
-    [self.recorder setMeteringEnabled:YES];
-    //[self.recorder record];
-
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -103,21 +84,16 @@
 - (IBAction)recordButtonTouchedDown:(id)sender
 {
     [self.speechRecognizer startRecording];
-    [self.recorder record];
-    
 }
 
 - (IBAction)recordButtonTouchedUpInside:(id)sender
 {
     [self.speechRecognizer stopRecording];
-    [self.recorder stop];
-    
 }
 
 - (IBAction)recordButtonTouchedUpOutside:(id)sender
 {
     [self.speechRecognizer stopRecording];
-    [self.recorder stop];
 }
 
 - (void)speechModule:(SpeechToTextModule *)module didReceiveResponse:(NSString *)response
@@ -142,14 +118,13 @@
 - (void)updateMeters
 {
     CGFloat normalizedValue;
-    
-    [self.recorder updateMeters];
-    normalizedValue = [self _normalizedPowerLevelFromDecibels:[self.recorder averagePowerForChannel:0]];
+
+    normalizedValue = [self _normalizedPowerLevelFromDecibels:[self.speechRecognizer averagePower]];
     
     [self.waveformView updateWithLevel:normalizedValue];
 }
 
-- (CGFloat)_normalizedPowerLevelFromDecibels:(CGFloat)decibels
+- (CGFloat)_normalizedPowerLevelFromDecibels:(float)decibels
 {
     if (decibels < -60.0f || decibels == 0.0f) {
         return 0.0f;

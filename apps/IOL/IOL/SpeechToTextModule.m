@@ -44,16 +44,12 @@
 @implementation AQRecorderState
 @end
 
-@interface SpeechToTextModule () {
-    BOOL detectedSpeech;
-    int samplesBelowSilence;
-
-    NSTimer *meterTimer;
+@interface SpeechToTextModule () {;
     BOOL processing;
-
-    NSMutableArray *volumeDataPoints;
 }
 @property (nonatomic, strong) AQRecorderState *aqData;
+@property (nonatomic, strong) AVAudioRecorder *recorder;
+@property (nonatomic, readwrite) BOOL micPermissionGranted;
 
 - (void)reset;
 - (void)postByteData:(NSData *)data;
@@ -107,37 +103,54 @@ static void DeriveBufferSize (AudioQueueRef audioQueue, AudioStreamBasicDescript
 
 - (id)init {
     if (self = [super init]) {
-
-        self.aqData = [[AQRecorderState alloc] init];
-        self.aqData->mDataFormat.mFormatID         = kAudioFormatLinearPCM;
-        self.aqData->mDataFormat.mSampleRate       = 16000.0;
-        self.aqData->mDataFormat.mChannelsPerFrame = 1;
-        self.aqData->mDataFormat.mBitsPerChannel   = 16;
-        self.aqData->mDataFormat.mBytesPerPacket   =
-        self.aqData->mDataFormat.mBytesPerFrame =
-        self.aqData->mDataFormat.mChannelsPerFrame * sizeof (SInt16);
-        self.aqData->mDataFormat.mFramesPerPacket  = 1;
-
-        self.aqData->mDataFormat.mFormatFlags =
-        kLinearPCMFormatFlagIsSignedInteger
-        | kLinearPCMFormatFlagIsPacked;
-
-        memset(&(self.aqData->speex_bits), 0, sizeof(SpeexBits));
-        speex_bits_init(&(self.aqData->speex_bits));
-        self.aqData->speex_enc_state = speex_encoder_init(&speex_wb_mode);
-
-        int quality = 8;
-        speex_encoder_ctl(self.aqData->speex_enc_state, SPEEX_SET_QUALITY, &quality);
-        int vbr = 1;
-        speex_encoder_ctl(self.aqData->speex_enc_state, SPEEX_SET_VBR, &vbr);
-        speex_encoder_ctl(self.aqData->speex_enc_state, SPEEX_GET_FRAME_SIZE, &(self.aqData->speex_samples_per_frame));
-        self.aqData->mQueue = NULL;
-
-        [self reset];
+        self.micPermissionGranted = NO;
+        AVAudioSession* session = [AVAudioSession sharedInstance];
 
         [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+            self.micPermissionGranted = granted;
+            if (!granted) return;
 
+            self.aqData = [[AQRecorderState alloc] init];
+            self.aqData->mDataFormat.mFormatID         = kAudioFormatLinearPCM;
+            self.aqData->mDataFormat.mSampleRate       = 16000.0;
+            self.aqData->mDataFormat.mChannelsPerFrame = 1;
+            self.aqData->mDataFormat.mBitsPerChannel   = 16;
+            self.aqData->mDataFormat.mBytesPerPacket   =
+            self.aqData->mDataFormat.mBytesPerFrame =
+            self.aqData->mDataFormat.mChannelsPerFrame * sizeof (SInt16);
+            self.aqData->mDataFormat.mFramesPerPacket  = 1;
+
+            self.aqData->mDataFormat.mFormatFlags =
+            kLinearPCMFormatFlagIsSignedInteger
+            | kLinearPCMFormatFlagIsPacked;
+
+            memset(&(self.aqData->speex_bits), 0, sizeof(SpeexBits));
+            speex_bits_init(&(self.aqData->speex_bits));
+            self.aqData->speex_enc_state = speex_encoder_init(&speex_wb_mode);
+
+            int quality = 8;
+            speex_encoder_ctl(self.aqData->speex_enc_state, SPEEX_SET_QUALITY, &quality);
+            int vbr = 1;
+            speex_encoder_ctl(self.aqData->speex_enc_state, SPEEX_SET_VBR, &vbr);
+            speex_encoder_ctl(self.aqData->speex_enc_state, SPEEX_GET_FRAME_SIZE, &(self.aqData->speex_samples_per_frame));
+            self.aqData->mQueue = NULL;
+
+            [self reset];
+
+            [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+            [session setActive:YES error:nil];
+            NSDictionary *settings = @{AVSampleRateKey: @(16000),
+                                       AVFormatIDKey: @(kAudioFormatLinearPCM),
+                                       AVNumberOfChannelsKey: @(1),
+                                       AVLinearPCMBitDepthKey: @(16),
+                                       AVLinearPCMIsFloatKey: @(NO)};
+
+            NSError *error = nil;
+            self.recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL URLWithString:@"/dev/null"] settings:settings error:&error];
+            [self.recorder setMeteringEnabled:YES];
+            [self.recorder prepareToRecord];
         }];
+
     }
     return self;
 }
@@ -156,10 +169,6 @@ static void DeriveBufferSize (AudioQueueRef audioQueue, AudioStreamBasicDescript
     if (self.aqData->mQueue != NULL)
         AudioQueueDispose(self.aqData->mQueue, true);
 
-    AVAudioSession* session = [AVAudioSession sharedInstance];
-
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    [session setActive:YES error:nil];
 
     UInt32 enableLevelMetering = 1;
     AudioQueueNewInput(&(self.aqData->mDataFormat), HandleInputBuffer, (__bridge void * _Nullable)(self.aqData), NULL, kCFRunLoopCommonModes, 0, &(self.aqData->mQueue));
@@ -172,80 +181,31 @@ static void DeriveBufferSize (AudioQueueRef audioQueue, AudioStreamBasicDescript
     }
 
     self.aqData.encodedSpeexData = [[NSMutableData alloc] init];
-
-    [meterTimer invalidate];
-    samplesBelowSilence = 0;
-    detectedSpeech = NO;
-
-    volumeDataPoints = [[NSMutableArray alloc] initWithCapacity:kNumVolumeSamples];
-    for (int i = 0; i < kNumVolumeSamples; i++) {
-        [volumeDataPoints addObject:[NSNumber numberWithFloat:kMinVolumeSampleValue]];
-    }
 }
 
 - (void)startRecording {
-    @synchronized(self) {
-        if (!self.recording && !processing) {
-            self.aqData->mCurrentPacket = 0;
-            self.aqData->mIsRunning = true;
-            [self reset];
-            AudioQueueStart(self.aqData->mQueue, NULL);
-
-            meterTimer = [NSTimer scheduledTimerWithTimeInterval:kVolumeSamplingInterval target:self selector:@selector(checkMeter) userInfo:nil repeats:YES];
-        }
-    }
-}
-
-- (void)sineWaveCancelAction {
-    if (self.recording) {
-        [self stopRecording];
-    } else {
+    if (self.micPermissionGranted && !self.recording && !processing) {
+        self.aqData->mCurrentPacket = 0;
+        self.aqData->mIsRunning = true;
+        [self reset];
+        [self.recorder record];
+        AudioQueueStart(self.aqData->mQueue, NULL);
     }
 }
 
 - (void)stopRecording {
-    @synchronized(self) {
-        if (self.recording) {
-            AudioQueueStop(self.aqData->mQueue, true);
-            self.aqData->mIsRunning = false;
-            [meterTimer invalidate];
-            meterTimer = nil;
-            [self postByteData:self.aqData.encodedSpeexData];
-        }
+    if (self.recording) {
+        AudioQueueStop(self.aqData->mQueue, true);
+        self.aqData->mIsRunning = false;
+        [self.recorder stop];
+        [self postByteData:self.aqData.encodedSpeexData];
     }
 }
 
-- (void)checkMeter {
-    AudioQueueLevelMeterState meterState;
-    AudioQueueLevelMeterState meterStateDB;
-    UInt32 ioDataSize = sizeof(AudioQueueLevelMeterState);
-    AudioQueueGetProperty(self.aqData->mQueue, kAudioQueueProperty_CurrentLevelMeter, &meterState, &ioDataSize);
-    AudioQueueGetProperty(self.aqData->mQueue, kAudioQueueProperty_CurrentLevelMeterDB, &meterStateDB, &ioDataSize);
-
-    [volumeDataPoints removeObjectAtIndex:0];
-    float dataPoint;
-    if (meterStateDB.mAveragePower > kSilenceThresholdDB) {
-        detectedSpeech = YES;
-        dataPoint = MIN(kMaxVolumeSampleValue, meterState.mPeakPower);
-    } else {
-        dataPoint = MAX(kMinVolumeSampleValue, meterState.mPeakPower);
-    }
-    [volumeDataPoints addObject:[NSNumber numberWithFloat:dataPoint]];
-
-    if (detectedSpeech) {
-        if (meterStateDB.mAveragePower < kSilenceThresholdDB) {
-            samplesBelowSilence++;
-            if (samplesBelowSilence > kSilenceThresholdNumSamples)
-                [self stopRecording];
-        } else {
-            samplesBelowSilence = 0;
-        }
-    }
-}
-
-- (CGFloat)averagePowerForChannel:(NSUInteger)channel
+- (float)averagePower
 {
-
+    [self.recorder updateMeters];
+    return [self.recorder averagePowerForChannel:0];
 }
 
 #pragma mark - HTTP methods

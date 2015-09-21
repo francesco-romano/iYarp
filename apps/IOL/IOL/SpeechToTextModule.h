@@ -23,6 +23,7 @@
 @property (nonatomic, weak) id<SpeechToTextModuleDelegate> delegate;
 
 @property (readonly) BOOL recording;
+@property (readonly) BOOL micPermissionGranted;
 
 // Begins a voice recording
 - (void)startRecording;
@@ -32,7 +33,7 @@
 - (void)stopRecording;
 
 
-- (CGFloat)averagePowerForChannel:(NSUInteger)channel;
+- (float)averagePower;
 
 
 @end
