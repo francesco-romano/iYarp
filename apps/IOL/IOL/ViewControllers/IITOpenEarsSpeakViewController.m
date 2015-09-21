@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 Francesco Romano. All rights reserved.
 //
 
-#import "SpeakViewController.h"
+#import "IITOpenEarsSpeakViewController.h"
 
 #import <OpenEars/OELanguageModelGenerator.h>
 #import <OpenEars/OEPocketsphinxController.h>
 #import <OpenEars/OEAcousticModel.h>
 #import <OpenEars/OEEventsObserver.h>
 #import <yarp_iOS/IITYarpWrite.h>
-#import "IOLConstants.h"
+#import "IITIOLConstants.h"
 
 NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 
-@interface SpeakViewController () <OEEventsObserverDelegate>
+@interface IITOpenEarsSpeakViewController () <OEEventsObserverDelegate>
 @property (nonatomic, strong) OEEventsObserver *openEarsEventsObserver;
 @property (nonatomic, strong) NSString *languageModelPath;
 @property (nonatomic, strong) NSString *dictionaryPath;
@@ -26,7 +26,7 @@ NSString * const iCubIOLLanguageModelFileName = @"iCubIOLLanguageModel";
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @end
 
-@implementation SpeakViewController
+@implementation IITOpenEarsSpeakViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

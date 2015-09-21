@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Francesco Romano. All rights reserved.
 //
 
-#import "InitialViewController.h"
+#import "IITInitialViewController.h"
 #import <yarp_iOS/IITYarpNetworkConfiguration.h>
-#include "IOLConstants.h"
+#include "IITIOLConstants.h"
 
-@interface InitialViewController ()
+@interface IITInitialViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityView;
 @end
 
-@implementation InitialViewController
+@implementation IITInitialViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

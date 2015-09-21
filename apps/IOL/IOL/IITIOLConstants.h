@@ -1,5 +1,5 @@
 //
-//  IOLConstants.h
+//  IITIOLConstants.h
 //  IOL
 //
 //  Created by Francesco Romano on 29/07/15.
@@ -16,5 +16,7 @@ extern NSString * const IOLDefaultsPort;
 
 extern NSString * const IOLDefaultsOutputPort;
 extern NSString * const IOLDefaultsStateViewPort;
+
+extern NSString * const IOLErrorDomain;
 
 #endif

@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Francesco Romano. All rights reserved.
 //
 
-#import "PreferencesViewController.h"
-#import "IOLConstants.h"
+#import "IITPreferencesViewController.h"
+#import "IITIOLConstants.h"
 #import <yarp_iOS/IITYarpNetworkConfiguration.h>
 
-@interface PreferencesViewController () <UITextFieldDelegate>
+@interface IITPreferencesViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *yarpServerNamespace;
 @property (weak, nonatomic) IBOutlet UITextField *yarpServerHost;
 @property (weak, nonatomic) IBOutlet UITextField *yarpServerPort;
@@ -24,7 +24,7 @@
 - (IBAction)refreshNetwork:(id)sender;
 @end
 
-@implementation PreferencesViewController
+@implementation IITPreferencesViewController
 
 - (void)viewDidLoad
 {

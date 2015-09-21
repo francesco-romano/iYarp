@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  AppDelegate.h
 //  IOL
 //
 //  Created by Francesco Romano on 19/07/15.
@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpeakViewController : UIViewController
+@interface IITAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 
 @end
