@@ -2,31 +2,31 @@
 //  GoogleSpeakViewController.m
 //  IOL
 //
-//  Created by IITICUBLAP012 on 18/09/15.
+//  Created by Vadim Tikhanoff on 18/09/15.
 //  Copyright © 2015 Francesco Romano. All rights reserved.
 //
 
-#import "GoogleSpeakViewController.h"
+#import "IITGoogleSpeakViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-#import "SpeechToTextModule.h"
-#import "IOLConstants.h"
+#import "IITSpeechRecognizer.h"
+#import "IITIOLConstants.h"
 #import "SCSiriWaveformView.h"
 
 #import <yarp_iOS/IITYarpWrite.h>
 
 
-@interface GoogleSpeakViewController () <SpeechToTextModuleDelegate>
+@interface IITGoogleSpeakViewController () <IITSpeechRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *recognition;
 @property (weak, nonatomic) IBOutlet UIButton   *recordSpeech;
 @property (weak, nonatomic) IBOutlet SCSiriWaveformView   *waveformView;
 
 @property (nonatomic, strong) IITYarpWrite *outputPort;
-@property (nonatomic, strong) SpeechToTextModule *speechRecognizer;
+@property (nonatomic, strong) IITSpeechRecognizer *speechRecognizer;
 
 @end
 
-@implementation GoogleSpeakViewController
+@implementation IITGoogleSpeakViewController
 
 - (void)viewDidLoad {
     
@@ -34,7 +34,7 @@
     [self.outputPort isOpen];
     
     // Do any additional setup after loading the view.
-    self.speechRecognizer = [[SpeechToTextModule alloc] init];
+    self.speechRecognizer = [[IITSpeechRecognizer alloc] init];
     self.speechRecognizer.apiKey = @"";
     self.speechRecognizer.delegate = self;
     
@@ -96,13 +96,13 @@
     [self.speechRecognizer stopRecording];
 }
 
-- (void)speechModule:(SpeechToTextModule *)module didReceiveResponse:(NSString *)response
+- (void)speechRecognizer:(IITSpeechRecognizer *)module didReceiveResponse:(NSString *)response
 {
     self.recognition.text = response;
     [self.outputPort write:@{[NSNull null] : response}];
 }
 
-- (void)speechModule:(SpeechToTextModule *)module didFailedWithError:(NSError *)error
+- (void)speechRecognizer:(IITSpeechRecognizer *)module didFailedWithError:(NSError *)error
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                    message:error.localizedDescription

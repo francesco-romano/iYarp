@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 Francesco Romano. All rights reserved.
 //
 
-#import "FrameCaptureViewController.h"
+#import "IITFrameCaptureViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <yarp_iOS/IITYarpWrite.h>
 
-@interface FrameCaptureViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface IITFrameCaptureViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic) BOOL cameraAuthorized;
 @property (nonatomic, strong) IITYarpWrite *imagePort;
 @end
 
-@implementation FrameCaptureViewController
+@implementation IITFrameCaptureViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Francesco Romano. All rights reserved.
 //
 
-#import "IOLConstants.h"
+#import "IITIOLConstants.h"
 
 NSString * const IOLDefaultsNamespace = @"it.iit.iol.defaults.yarpnamespace";
 NSString * const IOLDefaultsHost = @"it.iit.iol.defaults.yarphost";

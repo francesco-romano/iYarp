@@ -9,26 +9,26 @@
 /* Begin PBXBuildFile section */
 		2207A7321BAAF41800FB002B /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2207A7311BAAF41800FB002B /* OpenEars.framework */; settings = {ASSET_TAGS = (); }; };
 		2207A7331BAAF5C500FB002B /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FFCCDB4C1B60D8900005207A /* AcousticModelEnglish.bundle */; };
-		225CA7DB1BAC144400DD7C30 /* GoogleSpeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7DA1BAC144400DD7C30 /* GoogleSpeakViewController.m */; settings = {ASSET_TAGS = (); }; };
-		225CA7DF1BAC18AC00DD7C30 /* SpeechToTextModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7DE1BAC18AC00DD7C30 /* SpeechToTextModule.m */; settings = {ASSET_TAGS = (); }; };
+		225CA7DB1BAC144400DD7C30 /* IITGoogleSpeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7DA1BAC144400DD7C30 /* IITGoogleSpeakViewController.m */; settings = {ASSET_TAGS = (); }; };
+		225CA7DF1BAC18AC00DD7C30 /* IITSpeechRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7DE1BAC18AC00DD7C30 /* IITSpeechRecognizer.m */; settings = {ASSET_TAGS = (); }; };
 		225CA7E81BB03F0000DD7C30 /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7E71BB03F0000DD7C30 /* SCSiriWaveformView.m */; settings = {ASSET_TAGS = (); }; };
 		FF2CA4F41B5C0389005EE193 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4F31B5C0389005EE193 /* main.m */; };
-		FF2CA4F71B5C0389005EE193 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4F61B5C0389005EE193 /* AppDelegate.m */; };
-		FF2CA4FA1B5C0389005EE193 /* SpeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4F91B5C0389005EE193 /* SpeakViewController.m */; };
-		FF2CA4FD1B5C0389005EE193 /* RobotViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4FC1B5C0389005EE193 /* RobotViewsViewController.m */; };
+		FF2CA4F71B5C0389005EE193 /* IITAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4F61B5C0389005EE193 /* IITAppDelegate.m */; };
+		FF2CA4FA1B5C0389005EE193 /* IITOpenEarsSpeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4F91B5C0389005EE193 /* IITOpenEarsSpeakViewController.m */; };
+		FF2CA4FD1B5C0389005EE193 /* IITRobotViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4FC1B5C0389005EE193 /* IITRobotViewsViewController.m */; };
 		FF2CA5001B5C0389005EE193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA4FE1B5C0389005EE193 /* Main.storyboard */; };
 		FF2CA5021B5C0389005EE193 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA5011B5C0389005EE193 /* Images.xcassets */; };
 		FF2CA5051B5C0389005EE193 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA5031B5C0389005EE193 /* LaunchScreen.xib */; };
 		FF2CA5111B5C0389005EE193 /* IOLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA5101B5C0389005EE193 /* IOLTests.m */; };
-		FF2F1AC11B6A6CCB00EAA7B8 /* FrameCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F1AC01B6A6CCB00EAA7B8 /* FrameCaptureViewController.m */; };
+		FF2F1AC11B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F1AC01B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.m */; };
 		FF81173B1BB04C5700E01C16 /* Speex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81173A1BB04C5700E01C16 /* Speex.framework */; settings = {ASSET_TAGS = (); }; };
-		FFC865D91B68BE5B00C3B0C9 /* IOLConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC865D81B68BE5B00C3B0C9 /* IOLConstants.m */; };
-		FFCCDB481B60D38C0005207A /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCDB471B60D38C0005207A /* PreferencesViewController.m */; };
+		FFC865D91B68BE5B00C3B0C9 /* IITIOLConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC865D81B68BE5B00C3B0C9 /* IITIOLConstants.m */; };
+		FFCCDB481B60D38C0005207A /* IITPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCDB471B60D38C0005207A /* IITPreferencesViewController.m */; };
 		FFCCDB791B6138250005207A /* yarp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCCDB5F1B6136630005207A /* yarp_iOS.framework */; };
 		FFCCDB7A1B6138250005207A /* yarp_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FFCCDB5F1B6136630005207A /* yarp_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FFDBD7B81B5CDF530085441C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7B71B5CDF530085441C /* AVFoundation.framework */; };
 		FFDBD7BA1B5CDF5D0085441C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */; };
-		FFDD9D431B67D27400012C54 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD9D421B67D27400012C54 /* InitialViewController.m */; };
+		FFDD9D431B67D27400012C54 /* IITInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD9D421B67D27400012C54 /* IITInitialViewController.m */; };
 		FFDD9D4A1B68BAB200012C54 /* grammar in Resources */ = {isa = PBXBuildFile; fileRef = FFDD9D491B68BAB200012C54 /* grammar */; };
 /* End PBXBuildFile section */
 
@@ -86,40 +86,40 @@
 
 /* Begin PBXFileReference section */
 		2207A7311BAAF41800FB002B /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = Frameworks/OpenEars.framework; sourceTree = "<group>"; };
-		225CA7D91BAC144400DD7C30 /* GoogleSpeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleSpeakViewController.h; sourceTree = "<group>"; };
-		225CA7DA1BAC144400DD7C30 /* GoogleSpeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleSpeakViewController.m; sourceTree = "<group>"; };
-		225CA7DD1BAC18A600DD7C30 /* SpeechToTextModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechToTextModule.h; sourceTree = "<group>"; };
-		225CA7DE1BAC18AC00DD7C30 /* SpeechToTextModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechToTextModule.m; sourceTree = "<group>"; };
+		225CA7D91BAC144400DD7C30 /* IITGoogleSpeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITGoogleSpeakViewController.h; sourceTree = "<group>"; };
+		225CA7DA1BAC144400DD7C30 /* IITGoogleSpeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITGoogleSpeakViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		225CA7DD1BAC18A600DD7C30 /* IITSpeechRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IITSpeechRecognizer.h; sourceTree = "<group>"; };
+		225CA7DE1BAC18AC00DD7C30 /* IITSpeechRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITSpeechRecognizer.m; sourceTree = "<group>"; };
 		225CA7E61BB03F0000DD7C30 /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
 		225CA7E71BB03F0000DD7C30 /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
 		FF2CA4EE1B5C0389005EE193 /* IOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2CA4F21B5C0389005EE193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF2CA4F31B5C0389005EE193 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FF2CA4F51B5C0389005EE193 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FF2CA4F61B5C0389005EE193 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FF2CA4F81B5C0389005EE193 /* SpeakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeakViewController.h; sourceTree = "<group>"; };
-		FF2CA4F91B5C0389005EE193 /* SpeakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeakViewController.m; sourceTree = "<group>"; };
-		FF2CA4FB1B5C0389005EE193 /* RobotViewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotViewsViewController.h; sourceTree = "<group>"; };
-		FF2CA4FC1B5C0389005EE193 /* RobotViewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotViewsViewController.m; sourceTree = "<group>"; };
+		FF2CA4F51B5C0389005EE193 /* IITAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IITAppDelegate.h; sourceTree = "<group>"; };
+		FF2CA4F61B5C0389005EE193 /* IITAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		FF2CA4F81B5C0389005EE193 /* IITOpenEarsSpeakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IITOpenEarsSpeakViewController.h; sourceTree = "<group>"; };
+		FF2CA4F91B5C0389005EE193 /* IITOpenEarsSpeakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITOpenEarsSpeakViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		FF2CA4FB1B5C0389005EE193 /* IITRobotViewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IITRobotViewsViewController.h; sourceTree = "<group>"; };
+		FF2CA4FC1B5C0389005EE193 /* IITRobotViewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITRobotViewsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FF2CA4FF1B5C0389005EE193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF2CA5011B5C0389005EE193 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FF2CA5041B5C0389005EE193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FF2CA50A1B5C0389005EE193 /* IOLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2CA50F1B5C0389005EE193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF2CA5101B5C0389005EE193 /* IOLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOLTests.m; sourceTree = "<group>"; };
-		FF2F1ABF1B6A6CCB00EAA7B8 /* FrameCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameCaptureViewController.h; sourceTree = "<group>"; };
-		FF2F1AC01B6A6CCB00EAA7B8 /* FrameCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameCaptureViewController.m; sourceTree = "<group>"; };
+		FF2F1ABF1B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITFrameCaptureViewController.h; sourceTree = "<group>"; };
+		FF2F1AC01B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITFrameCaptureViewController.m; sourceTree = "<group>"; };
 		FF81173A1BB04C5700E01C16 /* Speex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speex.framework; path = Frameworks/Speex.framework; sourceTree = "<group>"; };
-		FFC865D81B68BE5B00C3B0C9 /* IOLConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOLConstants.m; sourceTree = "<group>"; };
-		FFC865DB1B68BE6D00C3B0C9 /* IOLConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOLConstants.h; sourceTree = "<group>"; };
-		FFCCDB461B60D38C0005207A /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
-		FFCCDB471B60D38C0005207A /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
+		FFC865D81B68BE5B00C3B0C9 /* IITIOLConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITIOLConstants.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		FFC865DB1B68BE6D00C3B0C9 /* IITIOLConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = IITIOLConstants.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		FFCCDB461B60D38C0005207A /* IITPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITPreferencesViewController.h; sourceTree = "<group>"; };
+		FFCCDB471B60D38C0005207A /* IITPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITPreferencesViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFCCDB4C1B60D8900005207A /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		FFCCDB591B6136620005207A /* yarp_iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yarp_iOS.xcodeproj; path = ../../libs/yarp_iOS/yarp_iOS.xcodeproj; sourceTree = "<group>"; };
 		FFDBD7B71B5CDF530085441C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		FFDD9D411B67D27400012C54 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
-		FFDD9D421B67D27400012C54 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		FFDD9D411B67D27400012C54 /* IITInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITInitialViewController.h; sourceTree = "<group>"; };
+		FFDD9D421B67D27400012C54 /* IITInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITInitialViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFDD9D491B68BAB200012C54 /* grammar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grammar; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,10 +179,10 @@
 		FF2CA4F01B5C0389005EE193 /* IOL */ = {
 			isa = PBXGroup;
 			children = (
-				FF2CA4F51B5C0389005EE193 /* AppDelegate.h */,
-				FF2CA4F61B5C0389005EE193 /* AppDelegate.m */,
-				FFC865DB1B68BE6D00C3B0C9 /* IOLConstants.h */,
-				FFC865D81B68BE5B00C3B0C9 /* IOLConstants.m */,
+				FF2CA4F51B5C0389005EE193 /* IITAppDelegate.h */,
+				FF2CA4F61B5C0389005EE193 /* IITAppDelegate.m */,
+				FFC865DB1B68BE6D00C3B0C9 /* IITIOLConstants.h */,
+				FFC865D81B68BE5B00C3B0C9 /* IITIOLConstants.m */,
 				FF8117411BB0707F00E01C16 /* Utilities */,
 				FFCCDB491B60D3CE0005207A /* ViewControllers */,
 				225CA7E41BB03EDD00DD7C30 /* Views */,
@@ -224,8 +224,8 @@
 		FF8117411BB0707F00E01C16 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				225CA7DD1BAC18A600DD7C30 /* SpeechToTextModule.h */,
-				225CA7DE1BAC18AC00DD7C30 /* SpeechToTextModule.m */,
+				225CA7DD1BAC18A600DD7C30 /* IITSpeechRecognizer.h */,
+				225CA7DE1BAC18AC00DD7C30 /* IITSpeechRecognizer.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -233,18 +233,18 @@
 		FFCCDB491B60D3CE0005207A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FF2CA4F81B5C0389005EE193 /* SpeakViewController.h */,
-				FF2CA4F91B5C0389005EE193 /* SpeakViewController.m */,
-				FF2CA4FB1B5C0389005EE193 /* RobotViewsViewController.h */,
-				FF2CA4FC1B5C0389005EE193 /* RobotViewsViewController.m */,
-				FFCCDB461B60D38C0005207A /* PreferencesViewController.h */,
-				FFCCDB471B60D38C0005207A /* PreferencesViewController.m */,
-				FFDD9D411B67D27400012C54 /* InitialViewController.h */,
-				FFDD9D421B67D27400012C54 /* InitialViewController.m */,
-				FF2F1ABF1B6A6CCB00EAA7B8 /* FrameCaptureViewController.h */,
-				FF2F1AC01B6A6CCB00EAA7B8 /* FrameCaptureViewController.m */,
-				225CA7D91BAC144400DD7C30 /* GoogleSpeakViewController.h */,
-				225CA7DA1BAC144400DD7C30 /* GoogleSpeakViewController.m */,
+				FF2CA4F81B5C0389005EE193 /* IITOpenEarsSpeakViewController.h */,
+				FF2CA4F91B5C0389005EE193 /* IITOpenEarsSpeakViewController.m */,
+				FF2CA4FB1B5C0389005EE193 /* IITRobotViewsViewController.h */,
+				FF2CA4FC1B5C0389005EE193 /* IITRobotViewsViewController.m */,
+				FFCCDB461B60D38C0005207A /* IITPreferencesViewController.h */,
+				FFCCDB471B60D38C0005207A /* IITPreferencesViewController.m */,
+				FFDD9D411B67D27400012C54 /* IITInitialViewController.h */,
+				FFDD9D421B67D27400012C54 /* IITInitialViewController.m */,
+				FF2F1ABF1B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.h */,
+				FF2F1AC01B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.m */,
+				225CA7D91BAC144400DD7C30 /* IITGoogleSpeakViewController.h */,
+				225CA7DA1BAC144400DD7C30 /* IITGoogleSpeakViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -332,8 +332,9 @@
 		FF2CA4E61B5C0389005EE193 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = IIT;
 				LastUpgradeCheck = 0640;
-				ORGANIZATIONNAME = "Francesco Romano";
+				ORGANIZATIONNAME = "Istituto Italiano di Tecnologia";
 				TargetAttributes = {
 					FF2CA4ED1B5C0389005EE193 = {
 						CreatedOnToolsVersion = 6.4;
@@ -414,17 +415,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF2CA4FD1B5C0389005EE193 /* RobotViewsViewController.m in Sources */,
-				225CA7DF1BAC18AC00DD7C30 /* SpeechToTextModule.m in Sources */,
-				FF2CA4F71B5C0389005EE193 /* AppDelegate.m in Sources */,
-				FFCCDB481B60D38C0005207A /* PreferencesViewController.m in Sources */,
-				225CA7DB1BAC144400DD7C30 /* GoogleSpeakViewController.m in Sources */,
+				FF2CA4FD1B5C0389005EE193 /* IITRobotViewsViewController.m in Sources */,
+				225CA7DF1BAC18AC00DD7C30 /* IITSpeechRecognizer.m in Sources */,
+				FF2CA4F71B5C0389005EE193 /* IITAppDelegate.m in Sources */,
+				FFCCDB481B60D38C0005207A /* IITPreferencesViewController.m in Sources */,
+				225CA7DB1BAC144400DD7C30 /* IITGoogleSpeakViewController.m in Sources */,
 				225CA7E81BB03F0000DD7C30 /* SCSiriWaveformView.m in Sources */,
-				FFDD9D431B67D27400012C54 /* InitialViewController.m in Sources */,
-				FF2CA4FA1B5C0389005EE193 /* SpeakViewController.m in Sources */,
-				FF2F1AC11B6A6CCB00EAA7B8 /* FrameCaptureViewController.m in Sources */,
+				FFDD9D431B67D27400012C54 /* IITInitialViewController.m in Sources */,
+				FF2CA4FA1B5C0389005EE193 /* IITOpenEarsSpeakViewController.m in Sources */,
+				FF2F1AC11B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.m in Sources */,
 				FF2CA4F41B5C0389005EE193 /* main.m in Sources */,
-				FFC865D91B68BE5B00C3B0C9 /* IOLConstants.m in Sources */,
+				FFC865D91B68BE5B00C3B0C9 /* IITIOLConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

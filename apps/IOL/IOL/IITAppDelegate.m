@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Francesco Romano. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "IITAppDelegate.h"
 #import <yarp_iOS/IITYarpNetworkConfiguration.h>
-#import "InitialViewController.h"
-#import "IOLConstants.h"
+#import "IITInitialViewController.h"
+#import "IITIOLConstants.h"
 
-@interface AppDelegate () <YarpNetworkCheckDelegate>
+@interface IITAppDelegate () <YarpNetworkCheckDelegate>
 
 @end
 
-@implementation AppDelegate
+@implementation IITAppDelegate
 
 + (void)initialize
 {
@@ -35,7 +35,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    InitialViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"InitializationView"];
+    IITInitialViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"InitializationView"];
     viewController.delegate = self;
 
     [self.window makeKeyAndVisible];

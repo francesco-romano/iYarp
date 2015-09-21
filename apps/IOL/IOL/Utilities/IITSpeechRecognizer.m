@@ -1,12 +1,13 @@
 //
-//  VoiceAddModule.m
-//  AstridiPhone
+//  IITSpeechRecognizer.m
+//  IOL
 //
-//  Created by Sam Bosley on 10/7/11.
-//  Copyright (c) 2011 Todoroo. All rights reserved.
+//  Created by Francesco Romano on 16/09/15.
+//  Copyright (c) 2015 Istituto Italiano di Tecnologia. All rights reserved.
 //
+//  First code version created by Sam Bosley on 10/7/11.
 
-#import "SpeechToTextModule.h"
+#import "IITSpeechRecognizer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <speex/speex.h>
 
@@ -44,7 +45,7 @@
 @implementation AQRecorderState
 @end
 
-@interface SpeechToTextModule () {;
+@interface IITSpeechRecognizer () {;
     BOOL processing;
 }
 @property (nonatomic, strong) AQRecorderState *aqData;
@@ -56,7 +57,7 @@
 
 @end
 
-@implementation SpeechToTextModule
+@implementation IITSpeechRecognizer
 
 static void HandleInputBuffer (void *aqData, AudioQueueRef inAQ, AudioQueueBufferRef inBuffer,
                                const AudioTimeStamp *inStartTime, UInt32 inNumPackets,
@@ -249,14 +250,14 @@ static void DeriveBufferSize (AudioQueueRef audioQueue, AudioStreamBasicDescript
     }
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegate speechModule:self didReceiveResponse:parsed[@"result"][0][@"alternative"][0][@"transcript"]];
+        [self.delegate speechRecognizer:self didReceiveResponse:parsed[@"result"][0][@"alternative"][0][@"transcript"]];
     });
 }
 
 - (void)requestFailed:(NSError *)error
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegate speechModule:self didFailedWithError:error];
+        [self.delegate speechRecognizer:self didFailedWithError:error];
     });
 }
 @end
