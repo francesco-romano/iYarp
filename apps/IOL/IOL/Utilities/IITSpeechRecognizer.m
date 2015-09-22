@@ -107,7 +107,7 @@ static void DeriveBufferSize (AudioQueueRef audioQueue, AudioStreamBasicDescript
         self.micPermissionGranted = NO;
         AVAudioSession* session = [AVAudioSession sharedInstance];
 
-        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+        [session requestRecordPermission:^(BOOL granted) {
             self.micPermissionGranted = granted;
             if (!granted) return;
 
@@ -146,6 +146,7 @@ static void DeriveBufferSize (AudioQueueRef audioQueue, AudioStreamBasicDescript
                                        AVNumberOfChannelsKey:    [NSNumber numberWithInt: 2],
                                        AVEncoderAudioQualityKey: [NSNumber numberWithInt: AVAudioQualityMin]};
             NSError *error = nil;
+
             self.recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL URLWithString:@"/dev/null"] settings:settings error:&error];
             [self.recorder prepareToRecord];
             [self.recorder setMeteringEnabled:YES];
@@ -171,9 +172,9 @@ static void DeriveBufferSize (AudioQueueRef audioQueue, AudioStreamBasicDescript
         AudioQueueDispose(self.aqData->mQueue, true);
 
 
-    UInt32 enableLevelMetering = 1;
+//    UInt32 enableLevelMetering = 1;
     AudioQueueNewInput(&(self.aqData->mDataFormat), HandleInputBuffer, (__bridge void * _Nullable)(self.aqData), NULL, kCFRunLoopCommonModes, 0, &(self.aqData->mQueue));
-    AudioQueueSetProperty(self.aqData->mQueue, kAudioQueueProperty_EnableLevelMetering, &enableLevelMetering, sizeof(UInt32));
+//    AudioQueueSetProperty(self.aqData->mQueue, kAudioQueueProperty_EnableLevelMetering, &enableLevelMetering, sizeof(UInt32));
     DeriveBufferSize(self.aqData->mQueue, &(self.aqData->mDataFormat), 0.5, &(self.aqData->bufferByteSize));
 
     for (int i = 0; i < kNumberBuffers; i++) {

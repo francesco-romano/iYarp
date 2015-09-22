@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Google Speech-->
+        <!--Speech-->
         <scene sceneID="ng1-uG-oO4">
             <objects>
                 <viewController id="qxO-qM-TuE" customClass="IITGoogleSpeakViewController" sceneMemberID="viewController">
@@ -80,7 +80,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Google Speech" image="first" id="BhS-5a-nRh"/>
+                    <tabBarItem key="tabBarItem" title="Speech" image="first" id="BhS-5a-nRh"/>
                     <connections>
                         <outlet property="recognition" destination="haH-tb-UJy" id="HHK-0D-2id"/>
                         <outlet property="recordSpeech" destination="eNG-Tb-xzb" id="FQV-Ab-zVb"/>
@@ -462,7 +462,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="qxO-qM-TuE" kind="relationship" relationship="viewControllers" id="d8L-uB-hO7"/>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="KaP-Bu-zbA" kind="relationship" relationship="viewControllers" id="nx4-2h-m5p"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="czT-WN-wrU" kind="relationship" relationship="viewControllers" id="FtY-2t-xBO"/>
