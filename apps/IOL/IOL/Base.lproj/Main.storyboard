@@ -80,7 +80,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Speech" image="first" id="BhS-5a-nRh"/>
+                    <tabBarItem key="tabBarItem" title="Speech" image="mic" id="BhS-5a-nRh">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.92846280339999998" green="0.14498472209999999" blue="0.30346992610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
                         <outlet property="recognition" destination="haH-tb-UJy" id="HHK-0D-2id"/>
                         <outlet property="recordSpeech" destination="eNG-Tb-xzb" id="FQV-Ab-zVb"/>
@@ -110,7 +116,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fos-IF-OTS">
-                                <rect key="frame" x="20" y="48.5" width="560" height="426.5"/>
+                                <rect key="frame" x="20" y="48" width="560" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -124,7 +130,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVw-IW-nOt">
-                                <rect key="frame" x="270" y="483" width="60" height="60"/>
+                                <rect key="frame" x="270" y="532" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="oOD-oV-BkV"/>
                                     <constraint firstAttribute="height" constant="60" id="zX9-d3-7qg"/>
@@ -151,7 +157,13 @@
                             <constraint firstAttribute="centerX" secondItem="nVw-IW-nOt" secondAttribute="centerX" id="sCB-aj-AYa"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="openEars Speech" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="openEars Speech" image="first" id="acW-dT-cKf">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.92846280339999998" green="0.14498472209999999" blue="0.30346992610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
                         <outlet property="recognizedSpeech" destination="Fos-IF-OTS" id="e0Y-JC-suF"/>
                         <outlet property="recordButton" destination="nVw-IW-nOt" id="eJi-YN-Gd2"/>
@@ -185,7 +197,13 @@
                             <constraint firstAttribute="trailing" secondItem="OdC-tH-5yg" secondAttribute="trailing" id="p13-fi-mHw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Views" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Views" image="camera" id="cPa-gy-q4n">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.92846280339999998" green="0.14498472209999999" blue="0.30346992610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
                         <outlet property="iolView" destination="OdC-tH-5yg" id="iK6-2H-LjG"/>
                         <outlet property="view" destination="QS5-Rx-YEW" id="gDK-tr-abx"/>
@@ -409,7 +427,13 @@
                             <outletCollection property="gestureRecognizers" destination="2gK-0x-VAT" appends="YES" id="DME-Cb-fSG"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Preferences" id="7CT-jR-8Bf"/>
+                    <tabBarItem key="tabBarItem" title="Preferences" image="settings" id="7CT-jR-8Bf">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.92846280339999998" green="0.14498472209999999" blue="0.30346992610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
                         <outlet property="iolOutputPort" destination="wYX-OC-dbw" id="cxH-7V-SBe"/>
                         <outlet property="iolStateView" destination="SbH-Lg-Hga" id="4BV-vI-Ivd"/>
@@ -441,7 +465,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Video Capture" id="Z1P-sg-rRz"/>
+                    <tabBarItem key="tabBarItem" title="Video Capture" image="capture" id="Z1P-sg-rRz">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.92846280339999998" green="0.14498472209999999" blue="0.30346992610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
                         <outlet property="view" destination="Nc3-eV-3nN" id="CZa-bg-TEl"/>
                     </connections>
@@ -458,7 +488,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.92846280339999998" green="0.14498472209999999" blue="0.30346992610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.92846280339999998" green="0.14498472209999999" blue="0.30346992610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="qxO-qM-TuE" kind="relationship" relationship="viewControllers" id="d8L-uB-hO7"/>
@@ -511,8 +542,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="25" height="25"/>
+        <image name="capture" width="25" height="25"/>
         <image name="first" width="30" height="30"/>
+        <image name="mic" width="25" height="25"/>
         <image name="record" width="300" height="300"/>
-        <image name="second" width="30" height="30"/>
+        <image name="settings" width="25" height="25"/>
     </resources>
 </document>
