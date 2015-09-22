@@ -39,7 +39,9 @@
     viewController.delegate = self;
 
     [self.window makeKeyAndVisible];
-    [self.window.rootViewController presentViewController:viewController animated:YES completion:NULL];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.window.rootViewController presentViewController:viewController animated:YES completion:NULL];
+    });
     return YES;
 }
 

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5174A0F7A4BBD55F02CDC9116E520995D65BD1B0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "77FC83EEBABC943C45158C4DFBD14EC8EB4219A4" : 0,
+    "5174A0F7A4BBD55F02CDC9116E520995D65BD1B0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C817B900-1074-4465-AD27-D10843C172F0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "77FC83EEBABC943C45158C4DFBD14EC8EB4219A4" : "yarp",
+    "5174A0F7A4BBD55F02CDC9116E520995D65BD1B0" : "iYarp"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "IOL",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "apps\/IOL\/IOL.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:francesco-romano\/iYarp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5174A0F7A4BBD55F02CDC9116E520995D65BD1B0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:robotology\/yarp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "77FC83EEBABC943C45158C4DFBD14EC8EB4219A4"
+    }
+  ]
+}
