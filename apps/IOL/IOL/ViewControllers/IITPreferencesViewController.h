@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PreferencesViewController : UITableViewController
+@interface IITPreferencesViewController : UITableViewController
 
 @end

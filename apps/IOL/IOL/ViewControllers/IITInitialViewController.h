@@ -12,6 +12,6 @@
 - (void)viewController:(UIViewController*)viewController didCheckNetworkWithResult:(BOOL)result;
 @end
 
-@interface InitialViewController : UIViewController
+@interface IITInitialViewController : UIViewController
 @property (nonatomic, weak) id<YarpNetworkCheckDelegate> delegate;
 @end

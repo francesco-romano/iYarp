@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Francesco Romano. All rights reserved.
 //
 
-#import "RobotViewsViewController.h"
-#import "IOLConstants.h"
+#import "IITRobotViewsViewController.h"
+#import "IITIOLConstants.h"
 #import <yarp_iOS/IITYarpReadImage.h>
 
-@interface RobotViewsViewController () <IITYarpReadDelegate>
+@interface IITRobotViewsViewController () <IITYarpReadDelegate>
 @property (nonatomic, strong) IITYarpRead *iolStatePort;
 @property (nonatomic, weak) IBOutlet UIImageView *iolView;
 @end
 
-@implementation RobotViewsViewController
+@implementation IITRobotViewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

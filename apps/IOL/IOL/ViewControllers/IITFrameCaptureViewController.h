@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FrameCaptureViewController : UIViewController
+@interface IITFrameCaptureViewController : UIViewController
 
 @end

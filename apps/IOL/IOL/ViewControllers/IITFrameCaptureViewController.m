@@ -6,18 +6,18 @@
 //  Copyright (c) 2015 Francesco Romano. All rights reserved.
 //
 
-#import "FrameCaptureViewController.h"
+#import "IITFrameCaptureViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <yarp_iOS/IITYarpWrite.h>
 
-@interface FrameCaptureViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface IITFrameCaptureViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic) BOOL cameraAuthorized;
 @property (nonatomic, strong) IITYarpWrite *imagePort;
 @end
 
-@implementation FrameCaptureViewController
+@implementation IITFrameCaptureViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,12 +40,17 @@
     // Find a suitable AVCaptureDevice
     AVCaptureDevice *device = [AVCaptureDevice
                                defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if (!device) {
+        NSLog(@"Could not find a video device");
+        return;
+    }
 
     // Create a device input with the device and add it to the session.
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device
                                                                         error:&error];
     if (!input) {
-        // Handling the error appropriately.
+        NSLog(@"Could not create a video device input");
+        return;
     }
     [session addInput:input];
 

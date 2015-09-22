@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  IOL
 //
 //  Created by Francesco Romano on 19/07/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RobotViewsViewController : UIViewController
+@interface IITOpenEarsSpeakViewController : UIViewController
 
 
 @end
