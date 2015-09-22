@@ -40,12 +40,17 @@
     // Find a suitable AVCaptureDevice
     AVCaptureDevice *device = [AVCaptureDevice
                                defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if (!device) {
+        NSLog(@"Could not find a video device");
+        return;
+    }
 
     // Create a device input with the device and add it to the session.
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device
                                                                         error:&error];
     if (!input) {
-        // Handling the error appropriately.
+        NSLog(@"Could not create a video device input");
+        return;
     }
     [session addInput:input];
 
