@@ -49,9 +49,10 @@
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device
                                                                         error:&error];
     if (!input) {
-        NSLog(@"Could not create a video device input");
+        NSLog(@"Could not create a video device input with error %@", error);
         return;
     }
+
     [session addInput:input];
 
     // Create a VideoDataOutput and add it to the session
