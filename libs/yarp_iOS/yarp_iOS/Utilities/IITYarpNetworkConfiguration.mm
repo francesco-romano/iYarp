@@ -110,22 +110,35 @@
 {
     using namespace yarp::os;
     if (![[self nameSpace] length]) {
-        if (completionHandler) completionHandler(NO);
+        if (completionHandler)
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(NO);
+            });
+
     }
 
     Network::init();
 
     __block BOOL check = NO;
     __block BOOL finished = NO;
-    NSOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+
+    NSBlockOperation *operation = [[NSBlockOperation alloc] init];
+    __weak NSOperation *weakOperation = operation;
+    [operation addExecutionBlock:^{
         check = Network::checkNetwork();
+        //if operation has been canceled, it means that the callback has already been called
+        if (weakOperation.isCancelled) return;
+
         finished = YES;
         if (!check) {
             Network::fini();
         } else {
             self.initialize = YES;
         }
-        if (completionHandler) completionHandler(check ? YES : NO);
+        if (completionHandler)
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(check ? YES : NO);
+            });
     }];
 
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -136,7 +149,10 @@
             if (!finished) {
                 [operation cancel];
                 Network::fini();
-                if (completionHandler) completionHandler(check ? YES : NO);
+                if (completionHandler)
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completionHandler(check ? YES : NO);
+                    });
             }
         });
     }

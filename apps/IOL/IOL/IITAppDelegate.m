@@ -34,14 +34,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    IITInitialViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"InitializationView"];
+    //get initial view controller
+    IITInitialViewController *viewController = (IITInitialViewController*)self.window.rootViewController;
     viewController.delegate = self;
 
     [self.window makeKeyAndVisible];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.window.rootViewController presentViewController:viewController animated:YES completion:NULL];
-    });
+
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self.window.rootViewController presentViewController:viewController animated:YES completion:NULL];
+//    });
     return YES;
 }
 
@@ -53,9 +54,7 @@
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {
-                                                                  [viewController dismissViewControllerAnimated:YES completion:^{
-                                                                      [(UITabBarController*)self.window.rootViewController setSelectedIndex:2
-                                                                       ];                                                                  }];
+                                                                  [self showTabBarControllerWithSelectedView:3];
                                                               }];
 
         [alert addAction:defaultAction];
@@ -63,10 +62,24 @@
 
     }
     else {
-        [viewController dismissViewControllerAnimated:YES completion:^{
-
-        }];
+//        [viewController dismissViewControllerAnimated:YES completion:^{
+//
+//        }];
+        [self showTabBarControllerWithSelectedView:0];
     }
+}
+
+- (void)showTabBarControllerWithSelectedView:(NSUInteger)index
+{
+    if (![self.window.rootViewController isKindOfClass:[UITabBarController class]])
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"ApplicationMainUI"];
+    }
+    UITabBarController* tabController = (UITabBarController*)self.window.rootViewController;
+    if (index < [tabController.viewControllers count])
+        [tabController setSelectedViewController:[tabController.viewControllers objectAtIndex:index]];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

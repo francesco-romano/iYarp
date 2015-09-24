@@ -31,8 +31,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [self.outputPort isOpen];
-    
     // Do any additional setup after loading the view.
     self.speechRecognizer = [[IITSpeechRecognizer alloc] init];
     self.speechRecognizer.apiKey = @"";

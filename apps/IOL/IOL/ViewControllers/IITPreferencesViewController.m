@@ -104,7 +104,6 @@
 
 - (IBAction)dismissKeyboard:(id)sender
 {
-    NSLog(@"dismissing");
     [self.yarpServerNamespace endEditing:YES];
     [self.yarpServerHost endEditing:YES];
     [self.yarpServerPort endEditing:YES];
