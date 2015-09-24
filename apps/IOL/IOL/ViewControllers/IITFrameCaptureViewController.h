@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface IITFrameCaptureViewController : UIViewController
-
+@property (nonatomic, readonly) BOOL cameraAuthorized;
 @end

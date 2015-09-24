@@ -13,7 +13,7 @@
 @interface IITFrameCaptureViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
-@property (nonatomic) BOOL cameraAuthorized;
+@property (nonatomic, readwrite) BOOL cameraAuthorized;
 @property (nonatomic, strong) IITYarpWrite *imagePort;
 @end
 
@@ -22,11 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
     self.imagePort = [IITYarpWrite yarpWriteForObjectClass:[UIImage class]];
     [self.imagePort openPortNamed:@"/iIOL/capture:o"];
 
-    NSError *error = nil;
     self.cameraAuthorized = NO;
 
     // Create the session
@@ -37,46 +35,11 @@
     // chosen device.
     session.sessionPreset = AVCaptureSessionPresetMedium;
 
-    // Find a suitable AVCaptureDevice
-    AVCaptureDevice *device = [AVCaptureDevice
-                               defaultDeviceWithMediaType:AVMediaTypeVideo];
-    if (!device) {
-        NSLog(@"Could not find a video device");
-        return;
-    }
-
-    // Create a device input with the device and add it to the session.
-    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device
-                                                                        error:&error];
-    if (!input) {
-        NSLog(@"Could not create a video device input with error %@", error);
-        return;
-    }
-
-    [session addInput:input];
-
-    // Create a VideoDataOutput and add it to the session
-    AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
-    [session addOutput:output];
-
-    // Configure your output.
-    dispatch_queue_t queue = dispatch_queue_create("it.iit.iol.queue.videocapture", DISPATCH_QUEUE_SERIAL);
-    [output setSampleBufferDelegate:self queue:queue];
-
-    // Specify the pixel format
-    output.videoSettings =
-    [NSDictionary dictionaryWithObject:
-     [NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
-                                forKey:(id)kCVPixelBufferPixelFormatTypeKey];
-
-
     self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
     self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspect;
     self.previewLayer.frame = self.view.bounds;
     [self.previewLayer setBackgroundColor:[[UIColor blackColor] CGColor]];
     [self.view.layer addSublayer:self.previewLayer];
-
-    self.captureSession = session;
 
     [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
         self.cameraAuthorized = granted;
@@ -84,21 +47,54 @@
         {
             //Not granted access to mediaType
             dispatch_async(dispatch_get_main_queue(), ^{
-                //migrate to new class
-                [[[UIAlertView alloc] initWithTitle:@"AVCam!"
-                                            message:@"AVCam doesn't have permission to use Camera, please change privacy settings"
+                //TODO: migrate to new class
+                [[[UIAlertView alloc] initWithTitle:@"Error"
+                                            message:@"IOL doesn't have permission to use Camera, please change privacy settings"
                                            delegate:self
                                   cancelButtonTitle:@"OK"
                                   otherButtonTitles:nil] show];
             });
         } else {
+
+            // Find a suitable AVCaptureDevice
+            AVCaptureDevice *device = [AVCaptureDevice
+                                       defaultDeviceWithMediaType:AVMediaTypeVideo];
+            if (!device) {
+                NSLog(@"Could not find a video device");
+                return;
+            }
+            NSError *error = nil;
+            // Create a device input with the device and add it to the session.
+            AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device
+                                                                                error:&error];
+            if (!input) {
+                NSLog(@"Could not create a video device input with error: %@", error);
+                return;
+            }
+            [session addInput:input];
+
+            // Create a VideoDataOutput and add it to the session
+            AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
+            [session addOutput:output];
+
+            // Configure your output.
+            dispatch_queue_t queue = dispatch_queue_create("it.iit.iol.queue.videocapture", DISPATCH_QUEUE_SERIAL);
+            [output setSampleBufferDelegate:self queue:queue];
+
+            // Specify the pixel format
+            output.videoSettings =
+            [NSDictionary dictionaryWithObject:
+             [NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
+                                        forKey:(id)kCVPixelBufferPixelFormatTypeKey];
+            self.captureSession = session;
+
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
                 [self.captureSession startRunning];
             });
         }
+
     }];
 
-    //    });
 }
 
 - (void)dealloc
@@ -164,7 +160,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
     // Create an image object from the Quartz image
     UIImage *image = [UIImage imageWithCGImage:quartzImage];
-
+    
     // Release the Quartz image
     CGImageRelease(quartzImage);
     
