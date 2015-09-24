@@ -15,4 +15,6 @@ NSString * const IOLDefaultsPort = @"it.iit.iol.defaults.yarpport";
 NSString * const IOLDefaultsOutputPort = @"it.iit.iol.defaults.outputPort";
 NSString * const IOLDefaultsStateViewPort = @"it.iit.iol.defaults.stateView";
 
+NSString * const IOLDefaultsGoogleApiKey = @"it.iit.iol.defaults.googlekey";
+
 NSString * const IOLErrorDomain = @"it.iit.iol.errordomain";

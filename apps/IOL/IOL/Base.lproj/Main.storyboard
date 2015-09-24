@@ -420,6 +420,42 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Misc" id="mRu-kM-MfL">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="701-gk-oGQ">
+                                        <rect key="frame" x="0.0" y="397.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="701-gk-oGQ" id="nWS-bp-vbP">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vbH-La-oS0">
+                                                    <rect key="frame" x="149" y="12.5" width="443" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="czT-WN-wrU" id="xSQ-yX-Zj0"/>
+                                                    </connections>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Key" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adk-6d-s8F">
+                                                    <rect key="frame" x="8" y="14" width="133" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vbH-La-oS0" firstAttribute="trailing" secondItem="nWS-bp-vbP" secondAttribute="trailingMargin" id="4MJ-o5-l6z"/>
+                                                <constraint firstAttribute="centerY" secondItem="adk-6d-s8F" secondAttribute="centerY" id="5UF-ip-ntR"/>
+                                                <constraint firstItem="vbH-La-oS0" firstAttribute="leading" secondItem="adk-6d-s8F" secondAttribute="trailing" constant="8" id="GwI-U1-AKI"/>
+                                                <constraint firstItem="adk-6d-s8F" firstAttribute="leading" secondItem="nWS-bp-vbP" secondAttribute="leadingMargin" id="KXB-Va-Eid"/>
+                                                <constraint firstItem="adk-6d-s8F" firstAttribute="width" secondItem="vbH-La-oS0" secondAttribute="width" multiplier="0.3" id="P1c-JB-kj4"/>
+                                                <constraint firstAttribute="centerY" secondItem="vbH-La-oS0" secondAttribute="centerY" id="UqH-Fj-0eh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="czT-WN-wrU" id="l9W-aR-gRC"/>
@@ -435,6 +471,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <connections>
+                        <outlet property="googleApiKey" destination="vbH-La-oS0" id="MC9-aL-xBW"/>
                         <outlet property="iolOutputPort" destination="wYX-OC-dbw" id="cxH-7V-SBe"/>
                         <outlet property="iolStateView" destination="SbH-Lg-Hga" id="4BV-vI-Ivd"/>
                         <outlet property="refreshActivityView" destination="g8P-Ef-aOl" id="xqi-h6-QjR"/>

@@ -17,6 +17,11 @@ extern NSString * const IOLDefaultsPort;
 extern NSString * const IOLDefaultsOutputPort;
 extern NSString * const IOLDefaultsStateViewPort;
 
+extern NSString * const IOLDefaultsGoogleApiKey;
+
 extern NSString * const IOLErrorDomain;
+
+
+
 
 #endif

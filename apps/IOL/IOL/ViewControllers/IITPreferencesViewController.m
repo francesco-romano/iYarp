@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *iolStateView;
 @property (weak, nonatomic) IBOutlet UITextField *iolOutputPort;
 
+@property (weak, nonatomic) IBOutlet UITextField *googleApiKey;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *refreshActivityView;
 
 - (IBAction)dismissKeyboard:(id)sender;
@@ -38,6 +40,8 @@
 
     self.iolStateView.text = [userDefaults valueForKey:IOLDefaultsStateViewPort];
     self.iolOutputPort.text = [userDefaults valueForKey:IOLDefaultsOutputPort];
+
+    self.googleApiKey.text = [userDefaults valueForKey:IOLDefaultsGoogleApiKey];
 
 }
 
@@ -91,6 +95,8 @@
         [userDefaults setValue:textField.text forKey:IOLDefaultsStateViewPort];
     } else if (textField == self.iolOutputPort) {
         [userDefaults setValue:textField.text forKey:IOLDefaultsOutputPort];
+    } else if (textField == self.googleApiKey) {
+        [userDefaults setValue:self.googleApiKey.text forKey:IOLDefaultsGoogleApiKey];
     }
     [userDefaults synchronize];
 
@@ -109,6 +115,7 @@
     [self.yarpServerPort endEditing:YES];
     [self.iolStateView endEditing:YES];
     [self.iolOutputPort endEditing:YES];
+    [self.googleApiKey endEditing:YES];
 }
 
 @end

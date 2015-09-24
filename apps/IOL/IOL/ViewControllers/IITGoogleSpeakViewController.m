@@ -33,7 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.speechRecognizer = [[IITSpeechRecognizer alloc] init];
-    self.speechRecognizer.apiKey = @"";
+    self.speechRecognizer.apiKey = [[NSUserDefaults standardUserDefaults] valueForKey:IOLDefaultsGoogleApiKey];
     self.speechRecognizer.delegate = self;
     
     [[NSUserDefaults standardUserDefaults] addObserver:self
