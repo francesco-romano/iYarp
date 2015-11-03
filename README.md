@@ -23,7 +23,7 @@ Currently the following stuff are implemented:
 
 To create an Xcode project: 
 ```bash 
-cmake .. -G Xcode -DCMAKE_TOOLCHAIN_FILE=path/to/toolchain/iOS.cmake -DCREATE_LIB_MATH:BOOL=NO -DSKIP_ACE:BOOL=YES -DCREATE_SHARED_LIBRARY:BOOL=NO -DCREATE_YARPDATADUMPER:BOOL=NO -DCREATE_YARPMANAGER_CONSOLE:BOOL=NO -DYARP_COMPILE_EXECUTABLES:BOOL=NO
+cmake .. -G Xcode -DCMAKE_TOOLCHAIN_FILE=path/to/toolchain/iOS.cmake -DCREATE_LIB_MATH:BOOL=NO -DSKIP_ACE:BOOL=YES -DCREATE_SHARED_LIBRARY:BOOL=NO -DCREATE_YARPDATADUMPER:BOOL=NO -DCREATE_YARPMANAGER_CONSOLE:BOOL=NO -DYARP_COMPILE_EXECUTABLES:BOOL=NO -DYARP_USE_READLINE:BOOL=NO
 ````
 
 The generated projects is completely generic: it allows you to seemlessy change between simulator and device (or...I hope). Just remember to automatically update the project settings once you open the project (hoping for better support from CMake)
