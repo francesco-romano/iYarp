@@ -20,6 +20,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *googleApiKey;
 
+@property (weak, nonatomic) IBOutlet UITableViewCell *appleSpeechRecognizer;
+@property (weak, nonatomic) IBOutlet UITableViewCell *googleSpeechRecognizer;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *refreshActivityView;
 
 - (IBAction)dismissKeyboard:(id)sender;
@@ -33,6 +35,14 @@
     [super viewDidLoad];
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    NSString *speechRecognizer = [userDefaults valueForKey:IOLDefaultsSpeechRecognizerTypeKey];
+    if (speechRecognizer == IOLDefaultsSpeechRecognizerTypeAppleKey) {
+        self.appleSpeechRecognizer.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else if (speechRecognizer == IOLDefaultsSpeechRecognizerTypeGoogleKey) {
+        self.appleSpeechRecognizer.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    
 
     self.yarpServerNamespace.text = [userDefaults valueForKey:IOLDefaultsNamespace];
     self.yarpServerHost.text = [userDefaults valueForKey:IOLDefaultsHost];
@@ -116,6 +126,11 @@
     [self.iolStateView endEditing:YES];
     [self.iolOutputPort endEditing:YES];
     [self.googleApiKey endEditing:YES];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"IndexPath: %@", indexPath);
 }
 
 @end

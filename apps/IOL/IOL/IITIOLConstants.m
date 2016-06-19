@@ -17,4 +17,9 @@ NSString * const IOLDefaultsStateViewPort = @"it.iit.iol.defaults.stateView";
 
 NSString * const IOLDefaultsGoogleApiKey = @"it.iit.iol.defaults.googlekey";
 
+NSString * const IOLDefaultsSpeechRecognizerTypeKey = @"it.iit.iol.defaults.speechrecognizer";
+NSString * const IOLDefaultsSpeechRecognizerTypeAppleKey = @"it.iit.iol.defaults.speechrecognizer.apple";
+NSString * const IOLDefaultsSpeechRecognizerTypeGoogleKey = @"it.iit.iol.defaults.speechrecognizer.google";
+
+
 NSString * const IOLErrorDomain = @"it.iit.iol.errordomain";

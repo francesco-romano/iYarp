@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IITYarpViewController.h"
 
-@interface IITFrameCaptureViewController : UIViewController
+@interface IITFrameCaptureViewController : IITYarpViewController
 @property (nonatomic, readonly) BOOL cameraAuthorized;
 @end

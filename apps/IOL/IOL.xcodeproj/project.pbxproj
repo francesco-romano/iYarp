@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2207A7321BAAF41800FB002B /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2207A7311BAAF41800FB002B /* OpenEars.framework */; settings = {ASSET_TAGS = (); }; };
+		2207A7321BAAF41800FB002B /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2207A7311BAAF41800FB002B /* OpenEars.framework */; };
 		2207A7331BAAF5C500FB002B /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FFCCDB4C1B60D8900005207A /* AcousticModelEnglish.bundle */; };
-		225CA7DB1BAC144400DD7C30 /* IITGoogleSpeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7DA1BAC144400DD7C30 /* IITGoogleSpeakViewController.m */; settings = {ASSET_TAGS = (); }; };
-		225CA7DF1BAC18AC00DD7C30 /* IITSpeechRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7DE1BAC18AC00DD7C30 /* IITSpeechRecognizer.m */; settings = {ASSET_TAGS = (); }; };
-		225CA7E81BB03F0000DD7C30 /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7E71BB03F0000DD7C30 /* SCSiriWaveformView.m */; settings = {ASSET_TAGS = (); }; };
+		225CA7DF1BAC18AC00DD7C30 /* IITSpeechRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7DE1BAC18AC00DD7C30 /* IITSpeechRecognizer.m */; };
+		225CA7E81BB03F0000DD7C30 /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 225CA7E71BB03F0000DD7C30 /* SCSiriWaveformView.m */; };
+		FF13307B1D16A7B900279C21 /* IITSpeechRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13307A1D16A7B900279C21 /* IITSpeechRecognizerViewController.m */; };
+		FF13307E1D16A94C00279C21 /* IITGoogleSpeechRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13307D1D16A94C00279C21 /* IITGoogleSpeechRecognizer.m */; };
+		FF1330811D16AC8600279C21 /* IITAppleSpeechRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1330801D16AC8600279C21 /* IITAppleSpeechRecognizer.m */; };
+		FF1330841D16AEC200279C21 /* IITSpeechRecognizer+ClusterUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1330831D16AEC200279C21 /* IITSpeechRecognizer+ClusterUtilities.m */; };
 		FF2CA4F41B5C0389005EE193 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4F31B5C0389005EE193 /* main.m */; };
 		FF2CA4F71B5C0389005EE193 /* IITAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4F61B5C0389005EE193 /* IITAppDelegate.m */; };
-		FF2CA4FA1B5C0389005EE193 /* IITOpenEarsSpeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4F91B5C0389005EE193 /* IITOpenEarsSpeakViewController.m */; };
 		FF2CA4FD1B5C0389005EE193 /* IITRobotViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA4FC1B5C0389005EE193 /* IITRobotViewsViewController.m */; };
 		FF2CA5001B5C0389005EE193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA4FE1B5C0389005EE193 /* Main.storyboard */; };
 		FF2CA5021B5C0389005EE193 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA5011B5C0389005EE193 /* Images.xcassets */; };
 		FF2CA5051B5C0389005EE193 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2CA5031B5C0389005EE193 /* LaunchScreen.xib */; };
 		FF2CA5111B5C0389005EE193 /* IOLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2CA5101B5C0389005EE193 /* IOLTests.m */; };
 		FF2F1AC11B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F1AC01B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.m */; };
-		FF81173B1BB04C5700E01C16 /* Speex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81173A1BB04C5700E01C16 /* Speex.framework */; settings = {ASSET_TAGS = (); }; };
+		FF81173B1BB04C5700E01C16 /* Speex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF81173A1BB04C5700E01C16 /* Speex.framework */; };
 		FFC865D91B68BE5B00C3B0C9 /* IITIOLConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC865D81B68BE5B00C3B0C9 /* IITIOLConstants.m */; };
 		FFCCDB481B60D38C0005207A /* IITPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCDB471B60D38C0005207A /* IITPreferencesViewController.m */; };
 		FFCCDB791B6138250005207A /* yarp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCCDB5F1B6136630005207A /* yarp_iOS.framework */; };
@@ -30,6 +32,7 @@
 		FFDBD7BA1B5CDF5D0085441C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDBD7B91B5CDF5D0085441C /* AudioToolbox.framework */; };
 		FFDD9D431B67D27400012C54 /* IITInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD9D421B67D27400012C54 /* IITInitialViewController.m */; };
 		FFDD9D4A1B68BAB200012C54 /* grammar in Resources */ = {isa = PBXBuildFile; fileRef = FFDD9D491B68BAB200012C54 /* grammar */; };
+		FFF4E2B41D16C778008306D3 /* IITYarpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF4E2B31D16C778008306D3 /* IITYarpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,19 +89,23 @@
 
 /* Begin PBXFileReference section */
 		2207A7311BAAF41800FB002B /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = Frameworks/OpenEars.framework; sourceTree = "<group>"; };
-		225CA7D91BAC144400DD7C30 /* IITGoogleSpeakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITGoogleSpeakViewController.h; sourceTree = "<group>"; };
-		225CA7DA1BAC144400DD7C30 /* IITGoogleSpeakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITGoogleSpeakViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		225CA7DD1BAC18A600DD7C30 /* IITSpeechRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IITSpeechRecognizer.h; sourceTree = "<group>"; };
 		225CA7DE1BAC18AC00DD7C30 /* IITSpeechRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITSpeechRecognizer.m; sourceTree = "<group>"; };
 		225CA7E61BB03F0000DD7C30 /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
 		225CA7E71BB03F0000DD7C30 /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
+		FF1330791D16A7B900279C21 /* IITSpeechRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITSpeechRecognizerViewController.h; sourceTree = "<group>"; };
+		FF13307A1D16A7B900279C21 /* IITSpeechRecognizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITSpeechRecognizerViewController.m; sourceTree = "<group>"; };
+		FF13307C1D16A94C00279C21 /* IITGoogleSpeechRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITGoogleSpeechRecognizer.h; sourceTree = "<group>"; };
+		FF13307D1D16A94C00279C21 /* IITGoogleSpeechRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITGoogleSpeechRecognizer.m; sourceTree = "<group>"; };
+		FF13307F1D16AC8600279C21 /* IITAppleSpeechRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITAppleSpeechRecognizer.h; sourceTree = "<group>"; };
+		FF1330801D16AC8600279C21 /* IITAppleSpeechRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITAppleSpeechRecognizer.m; sourceTree = "<group>"; };
+		FF1330821D16AEC200279C21 /* IITSpeechRecognizer+ClusterUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IITSpeechRecognizer+ClusterUtilities.h"; sourceTree = "<group>"; };
+		FF1330831D16AEC200279C21 /* IITSpeechRecognizer+ClusterUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IITSpeechRecognizer+ClusterUtilities.m"; sourceTree = "<group>"; };
 		FF2CA4EE1B5C0389005EE193 /* IOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2CA4F21B5C0389005EE193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF2CA4F31B5C0389005EE193 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FF2CA4F51B5C0389005EE193 /* IITAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IITAppDelegate.h; sourceTree = "<group>"; };
 		FF2CA4F61B5C0389005EE193 /* IITAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		FF2CA4F81B5C0389005EE193 /* IITOpenEarsSpeakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IITOpenEarsSpeakViewController.h; sourceTree = "<group>"; };
-		FF2CA4F91B5C0389005EE193 /* IITOpenEarsSpeakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITOpenEarsSpeakViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FF2CA4FB1B5C0389005EE193 /* IITRobotViewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IITRobotViewsViewController.h; sourceTree = "<group>"; };
 		FF2CA4FC1B5C0389005EE193 /* IITRobotViewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITRobotViewsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FF2CA4FF1B5C0389005EE193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +128,8 @@
 		FFDD9D411B67D27400012C54 /* IITInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITInitialViewController.h; sourceTree = "<group>"; };
 		FFDD9D421B67D27400012C54 /* IITInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IITInitialViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FFDD9D491B68BAB200012C54 /* grammar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grammar; sourceTree = "<group>"; };
+		FFF4E2B21D16C778008306D3 /* IITYarpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITYarpViewController.h; sourceTree = "<group>"; };
+		FFF4E2B31D16C778008306D3 /* IITYarpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IITYarpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +162,19 @@
 				225CA7E71BB03F0000DD7C30 /* SCSiriWaveformView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FF1330851D16AF1900279C21 /* Private Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FF1330821D16AEC200279C21 /* IITSpeechRecognizer+ClusterUtilities.h */,
+				FF1330831D16AEC200279C21 /* IITSpeechRecognizer+ClusterUtilities.m */,
+				FF13307C1D16A94C00279C21 /* IITGoogleSpeechRecognizer.h */,
+				FF13307D1D16A94C00279C21 /* IITGoogleSpeechRecognizer.m */,
+				FF13307F1D16AC8600279C21 /* IITAppleSpeechRecognizer.h */,
+				FF1330801D16AC8600279C21 /* IITAppleSpeechRecognizer.m */,
+			);
+			name = "Private Classes";
 			sourceTree = "<group>";
 		};
 		FF2CA4E51B5C0389005EE193 = {
@@ -226,6 +248,7 @@
 			children = (
 				225CA7DD1BAC18A600DD7C30 /* IITSpeechRecognizer.h */,
 				225CA7DE1BAC18AC00DD7C30 /* IITSpeechRecognizer.m */,
+				FF1330851D16AF1900279C21 /* Private Classes */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -233,8 +256,6 @@
 		FFCCDB491B60D3CE0005207A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FF2CA4F81B5C0389005EE193 /* IITOpenEarsSpeakViewController.h */,
-				FF2CA4F91B5C0389005EE193 /* IITOpenEarsSpeakViewController.m */,
 				FF2CA4FB1B5C0389005EE193 /* IITRobotViewsViewController.h */,
 				FF2CA4FC1B5C0389005EE193 /* IITRobotViewsViewController.m */,
 				FFCCDB461B60D38C0005207A /* IITPreferencesViewController.h */,
@@ -243,8 +264,10 @@
 				FFDD9D421B67D27400012C54 /* IITInitialViewController.m */,
 				FF2F1ABF1B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.h */,
 				FF2F1AC01B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.m */,
-				225CA7D91BAC144400DD7C30 /* IITGoogleSpeakViewController.h */,
-				225CA7DA1BAC144400DD7C30 /* IITGoogleSpeakViewController.m */,
+				FF1330791D16A7B900279C21 /* IITSpeechRecognizerViewController.h */,
+				FF13307A1D16A7B900279C21 /* IITSpeechRecognizerViewController.m */,
+				FFF4E2B21D16C778008306D3 /* IITYarpViewController.h */,
+				FFF4E2B31D16C778008306D3 /* IITYarpViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -333,7 +356,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = IIT;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Istituto Italiano di Tecnologia";
 				TargetAttributes = {
 					FF2CA4ED1B5C0389005EE193 = {
@@ -419,10 +442,13 @@
 				225CA7DF1BAC18AC00DD7C30 /* IITSpeechRecognizer.m in Sources */,
 				FF2CA4F71B5C0389005EE193 /* IITAppDelegate.m in Sources */,
 				FFCCDB481B60D38C0005207A /* IITPreferencesViewController.m in Sources */,
-				225CA7DB1BAC144400DD7C30 /* IITGoogleSpeakViewController.m in Sources */,
+				FF1330841D16AEC200279C21 /* IITSpeechRecognizer+ClusterUtilities.m in Sources */,
+				FFF4E2B41D16C778008306D3 /* IITYarpViewController.m in Sources */,
 				225CA7E81BB03F0000DD7C30 /* SCSiriWaveformView.m in Sources */,
+				FF1330811D16AC8600279C21 /* IITAppleSpeechRecognizer.m in Sources */,
+				FF13307E1D16A94C00279C21 /* IITGoogleSpeechRecognizer.m in Sources */,
 				FFDD9D431B67D27400012C54 /* IITInitialViewController.m in Sources */,
-				FF2CA4FA1B5C0389005EE193 /* IITOpenEarsSpeakViewController.m in Sources */,
+				FF13307B1D16A7B900279C21 /* IITSpeechRecognizerViewController.m in Sources */,
 				FF2F1AC11B6A6CCB00EAA7B8 /* IITFrameCaptureViewController.m in Sources */,
 				FF2CA4F41B5C0389005EE193 /* main.m in Sources */,
 				FFC865D91B68BE5B00C3B0C9 /* IITIOLConstants.m in Sources */,
@@ -498,6 +524,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -572,7 +599,9 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = IOL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.francescoromano.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -591,7 +620,9 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = IOL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.francescoromano.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -611,6 +642,7 @@
 				);
 				INFOPLIST_FILE = IOLTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.francescoromano.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IOL.app/IOL";
 			};
@@ -626,6 +658,7 @@
 				);
 				INFOPLIST_FILE = IOLTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.francescoromano.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IOL.app/IOL";
 			};

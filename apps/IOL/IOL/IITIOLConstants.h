@@ -19,8 +19,12 @@ extern NSString * const IOLDefaultsStateViewPort;
 
 extern NSString * const IOLDefaultsGoogleApiKey;
 
-extern NSString * const IOLErrorDomain;
+extern NSString * const IOLDefaultsSpeechRecognizerTypeKey;
+extern NSString * const IOLDefaultsSpeechRecognizerTypeAppleKey;
+extern NSString * const IOLDefaultsSpeechRecognizerTypeGoogleKey;
 
+
+extern NSString * const IOLErrorDomain;
 
 
 
