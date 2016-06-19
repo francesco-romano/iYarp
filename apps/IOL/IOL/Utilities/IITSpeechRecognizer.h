@@ -31,12 +31,13 @@
 @end
 
 @interface IITSpeechRecognizer : NSObject
-
-@property (nonatomic, strong) NSString *apiKey;
 @property (nonatomic, weak) id<IITSpeechRecognizerDelegate> delegate;
 
 @property (readonly) BOOL recording;
 @property (readonly) BOOL micPermissionGranted;
+
++ (instancetype)appleSpeechRecognizer;
++ (instancetype)googleSpeechRecognizerWithAPIKey:(NSString*)apiKey;
 
 /**
  * Start recording the voice
@@ -45,7 +46,7 @@
 
 /**
  * Stop recording the voice.
- * Send data to google service
+ * Process for recognition
  */
 - (void)stopRecording;
 

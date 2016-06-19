@@ -46,6 +46,11 @@
     }
 }
 
+- (BOOL)isOpen
+{
+    return (_outputPort && !_outputPort->isClosed()) ? YES : NO;
+}
+
 - (BOOL)isConnected
 {
     if (!_outputPort) return NO;

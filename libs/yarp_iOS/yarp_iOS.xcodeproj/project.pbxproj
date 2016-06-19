@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22BD85BE1BE7C7A60012FD8E /* libYARP_init.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BD859A1BE7C35C0012FD8E /* libYARP_init.a */; };
-		22BD85BF1BE7C7A60012FD8E /* libYARP_OS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BD85941BE7C35C0012FD8E /* libYARP_OS.a */; };
-		22BD85C01BE7C7A60012FD8E /* libYARP_sig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BD85961BE7C35C0012FD8E /* libYARP_sig.a */; };
+		FF1330721D169E4800279C21 /* libYARP_init.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1330651D169E2800279C21 /* libYARP_init.a */; };
+		FF1330731D169E4800279C21 /* libYARP_OS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF13305F1D169E2800279C21 /* libYARP_OS.a */; };
+		FF1330741D169E4800279C21 /* libYARP_sig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1330611D169E2800279C21 /* libYARP_sig.a */; };
+		FF1330771D169E8400279C21 /* libYARP_name.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1330671D169E2800279C21 /* libYARP_name.a */; };
 		FF1A050B1B6B601B00A308EC /* IITYarpWriteBottle.h in Headers */ = {isa = PBXBuildFile; fileRef = FF1A05091B6B601B00A308EC /* IITYarpWriteBottle.h */; };
 		FF1A050C1B6B601B00A308EC /* IITYarpWriteBottle.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF1A050A1B6B601B00A308EC /* IITYarpWriteBottle.mm */; };
 		FF1A051A1B6B602900A308EC /* IITYarpWriteImage.h in Headers */ = {isa = PBXBuildFile; fileRef = FF1A05181B6B602900A308EC /* IITYarpWriteImage.h */; };
@@ -41,75 +42,82 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		22BD85931BE7C35C0012FD8E /* PBXContainerItemProxy */ = {
+		FF13305E1D169E2800279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 622ED7CE05F140C08BF6C5FE;
+			remoteGlobalIDString = 00909A2F130E4213A266C8B0;
 			remoteInfo = YARP_OS;
 		};
-		22BD85951BE7C35C0012FD8E /* PBXContainerItemProxy */ = {
+		FF1330601D169E2800279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 5575B0EA4A2E49278B4417A9;
+			remoteGlobalIDString = A71C36D20C4C4DD583C03E99;
 			remoteInfo = YARP_sig;
 		};
-		22BD85971BE7C35C0012FD8E /* PBXContainerItemProxy */ = {
+		FF1330621D169E2800279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 874A967378EE430BB64F6C86;
+			remoteGlobalIDString = 7423F954150C47A9AB41BFA3;
 			remoteInfo = YARP_dev;
 		};
-		22BD85991BE7C35C0012FD8E /* PBXContainerItemProxy */ = {
+		FF1330641D169E2800279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0795B7384A6F40BBBBAB2F5D;
+			remoteGlobalIDString = 7156CE2157ED45F1910B549E;
 			remoteInfo = YARP_init;
 		};
-		22BD859B1BE7C35C0012FD8E /* PBXContainerItemProxy */ = {
+		FF1330661D169E2800279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FC624BC1E6284A3082907D80;
+			remoteGlobalIDString = 9B91FF44153D4899AF9CA461;
 			remoteInfo = YARP_name;
 		};
-		22BD859D1BE7C35C0012FD8E /* PBXContainerItemProxy */ = {
+		FF1330681D169E2800279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = A0D72CEF4BFD4230AD531752;
+			remoteGlobalIDString = F41912CAC35F42988626D20D;
 			remoteInfo = YARP_serversql;
 		};
-		22BD859F1BE7C35C0012FD8E /* PBXContainerItemProxy */ = {
+		FF13306A1D169E2800279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 50BA0E7178AB45DB9996B844;
+			remoteGlobalIDString = D7ED35A1425E4C7F92535FEE;
 			remoteInfo = YARP_logger;
 		};
-		22BD85AB1BE7C7950012FD8E /* PBXContainerItemProxy */ = {
+		FF13306C1D169E3C00279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 496DC465784A4036958998E6;
+			remoteGlobalIDString = 2FBD4301236E4892901ED325;
 			remoteInfo = YARP_OS;
 		};
-		22BD85AD1BE7C7950012FD8E /* PBXContainerItemProxy */ = {
+		FF13306E1D169E3C00279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BBEE8A4319154A47915C99F9;
+			remoteGlobalIDString = 3C2B21470B73471488056804;
 			remoteInfo = YARP_sig;
 		};
-		22BD85AF1BE7C7950012FD8E /* PBXContainerItemProxy */ = {
+		FF1330701D169E3C00279C21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 3953ED834B874A61B4C8BB83;
+			remoteGlobalIDString = 0611F73F13C44002A908F745;
 			remoteInfo = YARP_init;
+		};
+		FF1330751D169E8100279C21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 08039E1682C0460AA82B87E3;
+			remoteInfo = YARP_name;
 		};
 		FF4353441B5BECB700981100 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -121,7 +129,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YARP.xcodeproj; path = ../../yarp/build/YARP.xcodeproj; sourceTree = "<group>"; };
+		FF13304E1D169E2800279C21 /* YARP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YARP.xcodeproj; path = "../../build-yarp/YARP.xcodeproj"; sourceTree = "<group>"; };
 		FF1A05091B6B601B00A308EC /* IITYarpWriteBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITYarpWriteBottle.h; sourceTree = "<group>"; };
 		FF1A050A1B6B601B00A308EC /* IITYarpWriteBottle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IITYarpWriteBottle.mm; sourceTree = "<group>"; };
 		FF1A05181B6B602900A308EC /* IITYarpWriteImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IITYarpWriteImage.h; sourceTree = "<group>"; };
@@ -160,9 +168,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22BD85BE1BE7C7A60012FD8E /* libYARP_init.a in Frameworks */,
-				22BD85BF1BE7C7A60012FD8E /* libYARP_OS.a in Frameworks */,
-				22BD85C01BE7C7A60012FD8E /* libYARP_sig.a in Frameworks */,
+				FF1330771D169E8400279C21 /* libYARP_name.a in Frameworks */,
+				FF1330721D169E4800279C21 /* libYARP_init.a in Frameworks */,
+				FF1330731D169E4800279C21 /* libYARP_OS.a in Frameworks */,
+				FF1330741D169E4800279C21 /* libYARP_sig.a in Frameworks */,
 				FF43539D1B5BF13D00981100 /* UIKit.framework in Frameworks */,
 				FF43539A1B5BF11D00981100 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -179,16 +188,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22BD85841BE7C35C0012FD8E /* Products */ = {
+		FF13304F1D169E2800279C21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22BD85941BE7C35C0012FD8E /* libYARP_OS.a */,
-				22BD85961BE7C35C0012FD8E /* libYARP_sig.a */,
-				22BD85981BE7C35C0012FD8E /* libYARP_dev.a */,
-				22BD859A1BE7C35C0012FD8E /* libYARP_init.a */,
-				22BD859C1BE7C35C0012FD8E /* libYARP_name.a */,
-				22BD859E1BE7C35C0012FD8E /* libYARP_serversql.a */,
-				22BD85A01BE7C35C0012FD8E /* libYARP_logger.a */,
+				FF13305F1D169E2800279C21 /* libYARP_OS.a */,
+				FF1330611D169E2800279C21 /* libYARP_sig.a */,
+				FF1330631D169E2800279C21 /* libYARP_dev.a */,
+				FF1330651D169E2800279C21 /* libYARP_init.a */,
+				FF1330671D169E2800279C21 /* libYARP_name.a */,
+				FF1330691D169E2800279C21 /* libYARP_serversql.a */,
+				FF13306B1D169E2800279C21 /* libYARP_logger.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,7 +205,7 @@
 		FF43532D1B5BECB700981100 = {
 			isa = PBXGroup;
 			children = (
-				22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */,
+				FF13304E1D169E2800279C21 /* YARP.xcodeproj */,
 				FF4353391B5BECB700981100 /* yarp_iOS */,
 				FF4353461B5BECB700981100 /* yarp_iOSTests */,
 				FF43539B1B5BF12400981100 /* Frameworks */,
@@ -350,9 +359,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				22BD85AC1BE7C7950012FD8E /* PBXTargetDependency */,
-				22BD85AE1BE7C7950012FD8E /* PBXTargetDependency */,
-				22BD85B01BE7C7950012FD8E /* PBXTargetDependency */,
+				FF1330761D169E8100279C21 /* PBXTargetDependency */,
+				FF13306D1D169E3C00279C21 /* PBXTargetDependency */,
+				FF13306F1D169E3C00279C21 /* PBXTargetDependency */,
+				FF1330711D169E3C00279C21 /* PBXTargetDependency */,
 			);
 			name = yarp_iOS;
 			productName = yarp_iOS;
@@ -407,8 +417,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 22BD85841BE7C35C0012FD8E /* Products */;
-					ProjectRef = 22BD85831BE7C35C0012FD8E /* YARP.xcodeproj */;
+					ProductGroup = FF13304F1D169E2800279C21 /* Products */;
+					ProjectRef = FF13304E1D169E2800279C21 /* YARP.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -420,53 +430,53 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		22BD85941BE7C35C0012FD8E /* libYARP_OS.a */ = {
+		FF13305F1D169E2800279C21 /* libYARP_OS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libYARP_OS.a;
-			remoteRef = 22BD85931BE7C35C0012FD8E /* PBXContainerItemProxy */;
+			remoteRef = FF13305E1D169E2800279C21 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		22BD85961BE7C35C0012FD8E /* libYARP_sig.a */ = {
+		FF1330611D169E2800279C21 /* libYARP_sig.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libYARP_sig.a;
-			remoteRef = 22BD85951BE7C35C0012FD8E /* PBXContainerItemProxy */;
+			remoteRef = FF1330601D169E2800279C21 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		22BD85981BE7C35C0012FD8E /* libYARP_dev.a */ = {
+		FF1330631D169E2800279C21 /* libYARP_dev.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libYARP_dev.a;
-			remoteRef = 22BD85971BE7C35C0012FD8E /* PBXContainerItemProxy */;
+			remoteRef = FF1330621D169E2800279C21 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		22BD859A1BE7C35C0012FD8E /* libYARP_init.a */ = {
+		FF1330651D169E2800279C21 /* libYARP_init.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libYARP_init.a;
-			remoteRef = 22BD85991BE7C35C0012FD8E /* PBXContainerItemProxy */;
+			remoteRef = FF1330641D169E2800279C21 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		22BD859C1BE7C35C0012FD8E /* libYARP_name.a */ = {
+		FF1330671D169E2800279C21 /* libYARP_name.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libYARP_name.a;
-			remoteRef = 22BD859B1BE7C35C0012FD8E /* PBXContainerItemProxy */;
+			remoteRef = FF1330661D169E2800279C21 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		22BD859E1BE7C35C0012FD8E /* libYARP_serversql.a */ = {
+		FF1330691D169E2800279C21 /* libYARP_serversql.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libYARP_serversql.a;
-			remoteRef = 22BD859D1BE7C35C0012FD8E /* PBXContainerItemProxy */;
+			remoteRef = FF1330681D169E2800279C21 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		22BD85A01BE7C35C0012FD8E /* libYARP_logger.a */ = {
+		FF13306B1D169E2800279C21 /* libYARP_logger.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libYARP_logger.a;
-			remoteRef = 22BD859F1BE7C35C0012FD8E /* PBXContainerItemProxy */;
+			remoteRef = FF13306A1D169E2800279C21 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -518,20 +528,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		22BD85AC1BE7C7950012FD8E /* PBXTargetDependency */ = {
+		FF13306D1D169E3C00279C21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = YARP_OS;
-			targetProxy = 22BD85AB1BE7C7950012FD8E /* PBXContainerItemProxy */;
+			targetProxy = FF13306C1D169E3C00279C21 /* PBXContainerItemProxy */;
 		};
-		22BD85AE1BE7C7950012FD8E /* PBXTargetDependency */ = {
+		FF13306F1D169E3C00279C21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = YARP_sig;
-			targetProxy = 22BD85AD1BE7C7950012FD8E /* PBXContainerItemProxy */;
+			targetProxy = FF13306E1D169E3C00279C21 /* PBXContainerItemProxy */;
 		};
-		22BD85B01BE7C7950012FD8E /* PBXTargetDependency */ = {
+		FF1330711D169E3C00279C21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = YARP_init;
-			targetProxy = 22BD85AF1BE7C7950012FD8E /* PBXContainerItemProxy */;
+			targetProxy = FF1330701D169E3C00279C21 /* PBXContainerItemProxy */;
+		};
+		FF1330761D169E8100279C21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YARP_name;
+			targetProxy = FF1330751D169E8100279C21 /* PBXContainerItemProxy */;
 		};
 		FF4353451B5BECB700981100 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -584,7 +599,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					../../extern/install/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -630,7 +645,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					../../extern/install/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -656,7 +671,7 @@
 				);
 				INFOPLIST_FILE = yarp_iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.francescoromano.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -681,7 +696,7 @@
 				);
 				INFOPLIST_FILE = yarp_iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.francescoromano.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
