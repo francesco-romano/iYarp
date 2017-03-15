@@ -7,15 +7,15 @@ Repository structure:
 - *extern*: added only to define the repository structure. Files here should not be committed to the repository a part from particular reasons.
 - *libs*: Objective C/C++ libraries
 
-###yarp_iOS library
+### yarp_iOS library
 Currently the following stuff are implemented:
 
 - Read a bottle from a yarp buffered port (`yarp::os::BufferedPort<yarp::os::Bottle>`)
 - Read a RBG Image from a yarp port.
 
-###Install
+### Install
 
-####Prerequisites: YARP
+#### Prerequisites: YARP
 
 - Clone the YARP repository
 - `mkdir build && cd build`
@@ -23,20 +23,20 @@ Currently the following stuff are implemented:
 
 To create an Xcode project: 
 ```bash 
-cmake .. -G Xcode -DCMAKE_TOOLCHAIN_FILE=path/to/toolchain/iOS.cmake -DCREATE_LIB_MATH:BOOL=NO -DSKIP_ACE:BOOL=YES -DCREATE_SHARED_LIBRARY:BOOL=NO -DCREATE_YARPDATADUMPER:BOOL=NO -DCREATE_YARPMANAGER_CONSOLE:BOOL=NO -DYARP_COMPILE_EXECUTABLES:BOOL=NO -DYARP_USE_READLINE:BOOL=NO
+cmake .. -G Xcode -DCMAKE_TOOLCHAIN_FILE=path/to/toolchain/iOS.cmake -DCREATE_LIB_MATH:BOOL=NO -DSKIP_ACE:BOOL=YES -DCREATE_SHARED_LIBRARY:BOOL=NO -DCREATE_YARPDATADUMPER:BOOL=NO -DCREATE_YARPMANAGER_CONSOLE:BOOL=NO -DYARP_COMPILE_EXECUTABLES:BOOL=NO -DYARP_USE_LIBEDIT:BOOL=NO
 ````
 
 The generated projects is completely generic: it allows you to seemlessy change between simulator and device (or...I hope). Just remember to automatically update the project settings once you open the project (hoping for better support from CMake)
 
 If you want instead to use GNU Makefiles: 
 ```bash
-cmake .. -DCMAKE_TOOLCHAIN_FILE=path/to/toolchain/iOS.cmake -DIOS_PLATFORM=SIMULATOR64 | SIMULATOR | OS -DCREATE_LIB_MATH:BOOL=NO -DSKIP_ACE:BOOL=YES -DCREATE_SHARED_LIBRARY:BOOL=NO -DCREATE_YARPDATADUMPER:BOOL=NO -DCREATE_YARPMANAGER_CONSOLE:BOOL=NO -DYARP_COMPILE_EXECUTABLES:BOOL=NO
+cmake .. -DCMAKE_TOOLCHAIN_FILE=path/to/toolchain/iOS.cmake -DIOS_PLATFORM=SIMULATOR64 | SIMULATOR | OS -DCREATE_LIB_MATH:BOOL=NO -DSKIP_ACE:BOOL=YES -DCREATE_SHARED_LIBRARY:BOOL=NO -DCREATE_YARPDATADUMPER:BOOL=NO -DCREATE_YARPMANAGER_CONSOLE:BOOL=NO -DYARP_COMPILE_EXECUTABLES:BOOL=NO -DYARP_USE_LIBEDIT:BOOL=NO
 ``` 
 You have to explicitly define the target architecture (OS, SIMULATOR or SIMULATOR64)
 
 - Optional: install the libraries (change before the CMAKE_INSTALL_PREFIX variable please!!)
 
-####libYarp_iOS
+#### libYarp_iOS
 
 You can now open the workspace or simply build the Objective-C/C++ library in this repository. One thing currently left open is how to properly link the yarp libraries. If you installed the yarp libraries you can simply link them by adding the include directory and lib directory to the header and library search path and manually link the libraries (-lYARP_os, etc..)
 
